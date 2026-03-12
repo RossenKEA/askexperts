@@ -3,12 +3,62 @@ import Logo from "./Logo.astro";
 ---
 
 <header>
-  <Logo />
+  <div id="header_inner">
+    <Logo />
+    <ul>
+      <li>Home</li>
+      <li>Case Study</li>
+      <li>Team</li>
+      <li>About</li>
+    </ul>
+  </div>
 </header>
 
 <style>
   header {
-    background: var(--color-ui-primary, #030712);
+    background: var(--color-black);
     backdrop-filter: blur(10.5px);
+
+    display: flex;
+    width: 1920px;
+    padding: 38px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  #header_inner {
+    display: inline-grid;
+    width: 1200px;
+    max-width: 1200px;
+    row-gap: 378px;
+    column-gap: 378px;
+    flex-shrink: 0;
+    grid-template-rows: repeat(1, fit-content(100%));
+    grid-template-columns: minmax(0, 1fr) fit-content(100%) fit-content(100%);
+  }
+
+  header ul {
+    display: inline-flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+
+    list-style: none;
+
+    color: var(--color-white);
+  }
+
+  header li {
+    width: 48px;
+    height: 28px;
+    font-family: "Lato";
+    color: var(--color-white);
+    font-size: 17.728px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 28.365px */
   }
 </style>
