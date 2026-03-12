@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import Button from "./Button.astro";
 ---
 
 <header>
@@ -11,6 +12,9 @@ import Logo from "./Logo.astro";
       <li>Team</li>
       <li>About</li>
     </ul>
+    <div id="header_button">
+      <Button text="Login" paddingX="16px" bgColor="var(--color-white)" />
+    </div>
   </div>
 </header>
 
@@ -20,9 +24,9 @@ import Logo from "./Logo.astro";
     backdrop-filter: blur(10.5px);
 
     display: flex;
-    width: 1920px;
-    padding: 38px;
-    justify-content: space-between;
+    width: 100%;
+    padding: 38px 0;
+    justify-content: center;
     align-items: flex-start;
   }
 
@@ -30,11 +34,12 @@ import Logo from "./Logo.astro";
     display: inline-grid;
     width: 1200px;
     max-width: 1200px;
+    margin: 0 auto;
     row-gap: 378px;
     column-gap: 378px;
     flex-shrink: 0;
     grid-template-rows: repeat(1, fit-content(100%));
-    grid-template-columns: minmax(0, 1fr) fit-content(100%) fit-content(100%);
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   header ul {
@@ -42,7 +47,8 @@ import Logo from "./Logo.astro";
     align-items: flex-start;
     align-content: flex-start;
     gap: 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
 
@@ -52,13 +58,21 @@ import Logo from "./Logo.astro";
   }
 
   header li {
-    width: 48px;
-    height: 28px;
     font-family: "Lato";
     color: var(--color-white);
     font-size: 17.728px;
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 28.365px */
+  }
+
+  #header_button {
+    display: flex;
+    width: 94px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
   }
 </style>
