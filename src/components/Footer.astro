@@ -1,0 +1,109 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<footer id="footer">
+  <div id="footer_inner">
+    <div id="footer_left">
+      <Logo />
+    </div>
+    <p id="footer_copy">©2025 AskExperts. All rights reserved</p>
+    <div id="footer_links">
+      <a href="#">Terms of Service</a>
+      <span>|</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<style is:global>
+  #footer {
+    background: var(--color-black);
+    border-top: 1px solid #2b3a58;
+    width: 100%;
+    padding: var(--space-xl) 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  #footer_inner {
+    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-l);
+  }
+
+  #footer_left {
+    flex: 1;
+  }
+
+  #footer_copy {
+    flex: 1;
+    font-family: "Lato";
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-muted, #99a1af);
+    margin: 0;
+    text-align: center;
+  }
+
+  #footer_links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+    font-family: "Lato";
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-muted, #99a1af);
+  }
+
+  #footer_links a {
+    color: var(--color-muted, #99a1af);
+    text-decoration: none;
+
+    @supports (color: hsl(from red h s l)) {
+      color: hsl(from var(--color-muted, #99a1af) h s l);
+    }
+  }
+
+  #footer_links a:hover {
+    @supports (color: hsl(from red h s l)) {
+      color: hsl(from var(--color-muted, #99a1af) h s calc(l + 30%));
+    }
+
+    @supports not (color: hsl(from red h s l)) {
+      color: var(--color-white);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    #footer_inner {
+      width: calc(100% - var(--space-2xl));
+    }
+  }
+
+  @media (max-width: 768px) {
+    #footer_inner {
+      width: calc(100% - var(--space-l));
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #footer_links {
+      justify-content: center;
+    }
+  }
+</style>
