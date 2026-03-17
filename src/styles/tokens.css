@@ -6,6 +6,10 @@
   --color-gray:    #eaedf1;
   --color-white:   #f9fafb;
   --color-muted:   #99a1af;
+  --color-border:  #2b3a58;
+
+  /* ─── Layout ──────────────────────────────────────────── */
+  --footer-height: 123px;
 
   /* ─── Type scale (fluid) ─────────────────────────────── */
   /* --step--1 → labels, eyebrows                          */

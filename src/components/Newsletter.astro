@@ -14,8 +14,8 @@ import Button from "./Button.astro";
       <Button
         text="Subscribe"
         paddingX="32px"
-        bgColor="#ffcc4a"
-        textColor="#030712"
+        bgColor="var(--color-yellow)"
+        textColor="var(--color-black)"
       />
     </div>
   </div>
@@ -23,10 +23,13 @@ import Button from "./Button.astro";
 
 <style>
   #newsletter {
-    background: #030712;
-    border-bottom: 1px solid #2b3a58;
+    background: var(--color-black);
+    border-bottom: 1px solid var(--color-border);
     width: 100%;
-    padding: 60px 360px 183px;
+    padding-top: var(--space-xl);
+    padding-left: 360px;
+    padding-right: 360px;
+    padding-bottom: calc(var(--space-xl) + var(--footer-height));
     box-sizing: border-box;
   }
 
@@ -36,61 +39,61 @@ import Button from "./Button.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-2xs);
   }
 
   .newsletter_eyebrow {
     font-family: "Lato";
-    font-size: 13.33px;
+    font-size: var(--step--1);
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #ffcc4a;
+    color: var(--color-yellow);
     margin: 0;
   }
 
   .newsletter_heading {
     font-family: "Cabin Variable";
-    font-size: 40px;
+    font-size: var(--step-3);
     font-weight: 600;
     line-height: 120%;
-    color: #f9fafb;
+    color: var(--color-white);
     margin: 0;
     text-align: center;
   }
 
   .newsletter_subtitle {
     font-family: "Lato";
-    font-size: 17.728px;
+    font-size: var(--step-0);
     font-weight: 400;
     line-height: 160%;
-    color: #f9fafb;
+    color: var(--color-white);
     margin: 0;
     text-align: center;
   }
 
   .newsletter_brand {
-    color: #ffcc4a;
+    color: var(--color-yellow);
     font-weight: 700;
   }
 
   #newsletter_form {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 16px;
+    gap: var(--space-xs);
+    margin-top: var(--space-s);
   }
 
   #newsletter_email {
     width: 280px;
     padding: 10px 20px;
     border-radius: 999px;
-    border: 1.5px solid #f9fafb;
+    border: 1.5px solid var(--color-white);
     background: transparent;
-    color: #f9fafb;
+    color: var(--color-white);
     font-family: "Lato";
-    font-size: 17.728px;
+    font-size: var(--step-0);
     font-weight: 400;
     line-height: 160%;
     outline: none;
@@ -98,22 +101,20 @@ import Button from "./Button.astro";
   }
 
   #newsletter_email::placeholder {
-    color: rgba(249, 250, 251, 0.5);
+    color: hsl(from var(--color-white) h s l / 0.5);
   }
 
   @media (max-width: 1280px) {
     #newsletter {
-      padding: 60px 80px;
+      padding-left: 80px;
+      padding-right: 80px;
     }
   }
 
   @media (max-width: 768px) {
     #newsletter {
-      padding: 60px 24px;
-    }
-
-    .newsletter_heading {
-      font-size: 28px;
+      padding-left: var(--space-l);
+      padding-right: var(--space-l);
     }
 
     #newsletter_form {
