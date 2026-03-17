@@ -1,0 +1,38 @@
+---
+import Button from "./Button.astro";
+---
+
+<div id="login-popover" popover>
+  <h2 class="login_heading">Dashboard Login</h2>
+  <form class="login_form">
+    <div class="login_field">
+      <label for="login_email">Email address</label>
+      <input type="email" id="login_email" name="email" autocomplete="email" />
+    </div>
+    <div class="login_field">
+      <label for="login_password">Password</label>
+      <input type="password" id="login_password" name="password" autocomplete="current-password" />
+    </div>
+    <Button
+      text="Go to dashboard"
+      paddingX="32px"
+      bgColor="var(--color-yellow)"
+      textColor="var(--color-black)"
+    />
+  </form>
+</div>
+
+<!-- Styles i src/styles/global.css -->
+
+<script>
+  const btn = document.getElementById("login-btn")!;
+  const popover = document.getElementById("login-popover")!;
+
+  popover.addEventListener("toggle", (e) => {
+    if ((e as ToggleEvent).newState === "open") {
+      const rect = btn.getBoundingClientRect();
+      popover.style.top = `${rect.bottom + 8}px`;
+      popover.style.left = `${rect.right - popover.offsetWidth}px`;
+    }
+  });
+</script>

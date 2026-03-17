@@ -1,0 +1,185 @@
+/* ─── Login Popover ──────────────────────────────────── */
+#login-popover {
+  background: var(--color-white, #f9fafb);
+  border: none;
+  border-radius: 16px;
+  padding: var(--space-l, 2rem);
+  width: 280px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  bottom: auto;
+  left: auto;
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    display 0.2s ease allow-discrete,
+    overlay 0.2s ease allow-discrete;
+}
+
+@supports (anchor-name: --x) {
+  #login-popover {
+    position-anchor: --login-anchor;
+    top: calc(anchor(bottom) + 8px);
+    right: calc(100% - anchor(right));
+  }
+}
+
+#login-popover:popover-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@starting-style {
+  #login-popover:popover-open {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+#login-popover::backdrop {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #login-popover {
+    transition: none;
+  }
+}
+
+.login_heading {
+  font-family: "Cabin Variable";
+  font-size: var(--step-3, 2rem);
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--color-black, #030712);
+  margin: 0 0 var(--space-m, 1.5rem);
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s, 1rem);
+}
+
+.login_field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs, 0.5rem);
+}
+
+.login_field label {
+  font-family: "Lato";
+  font-size: var(--step-0, 17px);
+  font-weight: 400;
+  color: var(--color-black, #030712);
+}
+
+.login_field input {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-gray, #eaedf1);
+  background: var(--color-white, #f9fafb);
+  font-family: "Lato";
+  font-size: var(--step-0, 17px);
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.login_field input:focus {
+  border-color: var(--color-black, #030712);
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+#footer {
+  background: var(--color-black, #030712);
+  border-top: 1px solid var(--color-border, #2b3a58);
+  width: 100%;
+  padding: var(--space-xl, 3rem) 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#footer_inner {
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-l, 2rem);
+}
+
+#footer_left {
+  flex: 1;
+}
+
+#footer_copy {
+  flex: 1;
+  font-family: "Lato";
+  font-size: var(--step-0, 17px);
+  font-weight: 400;
+  line-height: 160%;
+  color: var(--color-muted, #99a1af);
+  margin: 0;
+  text-align: center;
+}
+
+#footer_links {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-xs, 0.75rem);
+  font-family: "Lato";
+  font-size: var(--step-0, 17px);
+  font-weight: 400;
+  line-height: 160%;
+  color: var(--color-muted, #99a1af);
+}
+
+#footer_links a {
+  color: var(--color-muted, #99a1af);
+  text-decoration: none;
+}
+
+#footer_links a:hover {
+  color: hsl(from var(--color-muted, #99a1af) h s calc(l + 30%));
+}
+
+@supports not (color: hsl(from red h s l)) {
+  #footer_links a:hover {
+    color: var(--color-white, #f9fafb);
+  }
+}
+
+@media (max-width: 1280px) {
+  #footer_inner {
+    width: calc(100% - var(--space-2xl, 4rem));
+  }
+}
+
+@media (max-width: 768px) {
+  #footer_inner {
+    width: calc(100% - var(--space-l, 2rem));
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #footer_links {
+    justify-content: center;
+  }
+}

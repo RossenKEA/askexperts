@@ -1,6 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import Button from "./Button.astro";
+import Login from "./Login.astro";
 ---
 
 <header>
@@ -13,10 +14,19 @@ import Button from "./Button.astro";
       <li>About</li>
     </ul>
     <div id="header_button">
-      <Button text="Login" paddingX="16px" bgColor="var(--color-white)" textColor="var(--color-black)" />
+      <Button
+        id="login-btn"
+        text="Login"
+        paddingX="16px"
+        bgColor="var(--color-white)"
+        textColor="var(--color-black)"
+        popovertarget="login-popover"
+      />
     </div>
   </div>
 </header>
+
+<Login />
 
 <style>
   header {
@@ -36,8 +46,6 @@ import Button from "./Button.astro";
     max-width: 1200px;
     margin: 0 auto;
     column-gap: var(--space-2xl);
-    flex-shrink: 0;
-    grid-template-rows: repeat(1, fit-content(100%));
     grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
@@ -69,11 +77,15 @@ import Button from "./Button.astro";
 
   #header_button {
     display: flex;
-    width: 94px;
+    width: fit-content;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-2xs);
-    grid-row: 1 / span 1;
     grid-column: 3 / span 1;
+  }
+
+  /* Anchor til login-popover */
+  #login-btn {
+    anchor-name: --login-anchor;
   }
 </style>
