@@ -1,0 +1,128 @@
+---
+import Button from "./Button.astro";
+---
+
+<section id="newsletter">
+  <div id="newsletter_inner">
+    <p class="newsletter_eyebrow">STAY UPDATED</p>
+    <h2 class="newsletter_heading">Subscribe Our Newsletter</h2>
+    <p class="newsletter_subtitle">
+      Build stronger Customer Relationships with <span class="newsletter_brand">AskExperts</span>
+    </p>
+    <div id="newsletter_form">
+      <input type="email" placeholder="your mail address" id="newsletter_email" />
+      <Button
+        text="Subscribe"
+        paddingX="32px"
+        bgColor="#ffcc4a"
+        textColor="#030712"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  #newsletter {
+    background: #030712;
+    border-bottom: 1px solid #2b3a58;
+    width: 100%;
+    padding: 60px 360px;
+    box-sizing: border-box;
+  }
+
+  #newsletter_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .newsletter_eyebrow {
+    font-family: "Lato";
+    font-size: 13.33px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffcc4a;
+    margin: 0;
+  }
+
+  .newsletter_heading {
+    font-family: "Cabin Variable";
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 120%;
+    color: #f9fafb;
+    margin: 0;
+    text-align: center;
+  }
+
+  .newsletter_subtitle {
+    font-family: "Lato";
+    font-size: 17.728px;
+    font-weight: 400;
+    line-height: 160%;
+    color: #f9fafb;
+    margin: 0;
+    text-align: center;
+  }
+
+  .newsletter_brand {
+    color: #ffcc4a;
+    font-weight: 700;
+  }
+
+  #newsletter_form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  #newsletter_email {
+    width: 280px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1.5px solid #f9fafb;
+    background: transparent;
+    color: #f9fafb;
+    font-family: "Lato";
+    font-size: 17.728px;
+    font-weight: 400;
+    line-height: 160%;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  #newsletter_email::placeholder {
+    color: rgba(249, 250, 251, 0.5);
+  }
+
+  @media (max-width: 1280px) {
+    #newsletter {
+      padding: 60px 80px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #newsletter {
+      padding: 60px 24px;
+    }
+
+    .newsletter_heading {
+      font-size: 28px;
+    }
+
+    #newsletter_form {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #newsletter_email {
+      width: 100%;
+    }
+  }
+</style>

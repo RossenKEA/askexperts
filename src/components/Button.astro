@@ -3,12 +3,13 @@ interface Props {
   text: string;
   paddingX?: string;
   bgColor?: string;
+  textColor?: string;
 }
 
-const { text, paddingX = "16px", bgColor = "#000000" } = Astro.props;
+const { text, paddingX = "16px", bgColor = "#000000", textColor = "#f9fafb" } = Astro.props;
 ---
 
-<button class="btn" style={`--btn-padding-x:${paddingX}; --btn-bg:${bgColor};`}>
+<button class="btn" style={`--btn-padding-x:${paddingX}; --btn-bg:${bgColor}; --btn-text-color:${textColor};`}>
   <span class="btn-text">{text}</span>
 </button>
 
@@ -28,6 +29,7 @@ const { text, paddingX = "16px", bgColor = "#000000" } = Astro.props;
   }
 
   .btn-text {
+    color: var(--btn-text-color);
     font-size: 17.728px;
     font-style: normal;
     font-weight: 400;
