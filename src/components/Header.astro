@@ -13,7 +13,7 @@ import Button from "./Button.astro";
       <li>About</li>
     </ul>
     <div id="header_button">
-      <Button text="Login" paddingX="16px" bgColor="var(--color-white)" />
+      <Button text="Login" paddingX="16px" bgColor="var(--color-white)" textColor="var(--color-black)" />
     </div>
   </div>
 </header>
@@ -25,7 +25,7 @@ import Button from "./Button.astro";
 
     display: flex;
     width: 100%;
-    padding: 38px 0;
+    padding: var(--space-l) 0;
     justify-content: center;
     align-items: flex-start;
   }
@@ -35,8 +35,7 @@ import Button from "./Button.astro";
     width: 1200px;
     max-width: 1200px;
     margin: 0 auto;
-    row-gap: 378px;
-    column-gap: 378px;
+    column-gap: var(--space-2xl);
     flex-shrink: 0;
     grid-template-rows: repeat(1, fit-content(100%));
     grid-template-columns: minmax(0, 1fr) auto auto;
@@ -46,13 +45,15 @@ import Button from "./Button.astro";
     display: inline-flex;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 30px;
+    gap: var(--space-m);
     flex-wrap: nowrap;
     white-space: nowrap;
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
 
     list-style: none;
+    margin: 0;
+    padding: 0;
 
     color: var(--color-white);
   }
@@ -60,10 +61,10 @@ import Button from "./Button.astro";
   header li {
     font-family: "Lato";
     color: var(--color-white);
-    font-size: 17.728px;
+    font-size: var(--step-0);
     font-style: normal;
     font-weight: 400;
-    line-height: 160%; /* 28.365px */
+    line-height: 160%;
   }
 
   #header_button {
@@ -71,7 +72,7 @@ import Button from "./Button.astro";
     width: 94px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: var(--space-2xs);
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
   }
