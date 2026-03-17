@@ -4,16 +4,25 @@ interface Props {
   paddingX?: string;
   bgColor?: string;
   textColor?: string;
+  borderColor?: string;
   id?: string;
   popovertarget?: string;
 }
 
-const { text, paddingX = "16px", bgColor = "#000000", textColor = "#f9fafb", id, popovertarget } = Astro.props;
+const {
+  text,
+  paddingX = "16px",
+  bgColor = "#000000",
+  textColor = "#f9fafb",
+  borderColor = "transparent",
+  id,
+  popovertarget,
+} = Astro.props;
 ---
 
 <button
   class="btn"
-  style={`--btn-padding-x:${paddingX}; --btn-bg:${bgColor}; --btn-text-color:${textColor};`}
+  style={`--btn-padding-x:${paddingX}; --btn-bg:${bgColor}; --btn-text-color:${textColor}; --btn-border:${borderColor};`}
   id={id}
   popovertarget={popovertarget}
 >
@@ -31,7 +40,7 @@ const { text, paddingX = "16px", bgColor = "#000000", textColor = "#f9fafb", id,
     border-radius: 999px;
 
     background: var(--btn-bg);
-    border: none;
+    border: 1.5px solid var(--btn-border);
     cursor: pointer;
   }
 
