@@ -1,0 +1,349 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+import image4 from "../assets/image4.png";
+import image5 from "../assets/image5.png";
+---
+
+<Layout>
+  <Header />
+
+  <section class="cs_hero">
+    <div class="cs_hero_inner">
+      <p class="cs_eyebrow">CASE STUDIES</p>
+      <h1 class="cs_title">Taxes &amp; Efficiency</h1>
+      <p class="cs_subtitle">
+        Our achievements reflect the close collaboration between our expert
+        teams and our esteemed clientele. We cultivate a workplace that
+        champions peak performance and guarantees client satisfaction.
+      </p>
+    </div>
+  </section>
+
+  <article class="cs_article flow">
+    <div class="cs_article_inner">
+
+      <div class="cs_image_wrap">
+        <img
+          src={image4.src}
+          alt="Laptop and coffee on desk"
+          class="cs_image_main"
+          width="800"
+          height="480"
+        />
+        <div class="cs_image_meta">
+          <div class="cs_meta_items_group">
+            <div class="cs_meta_item">
+              <span class="cs_meta_label">Case Name</span>
+              <span class="cs_meta_value">Taxes &amp; Efficiency</span>
+            </div>
+            <div class="cs_meta_item">
+              <span class="cs_meta_label">Category</span>
+              <span class="cs_meta_value">Business</span>
+            </div>
+            <div class="cs_meta_item">
+              <span class="cs_meta_label">Date</span>
+              <span class="cs_meta_value">27th September 2025</span>
+            </div>
+          </div>
+          <div class="cs_meta_cta">
+            <Button
+              text="Live Preview"
+              paddingX="33px"
+              paddingY="16px"
+              bgColor="#ffcc4a"
+              textColor="var(--color-black)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <section class="cs_section">
+        <h2 class="cs_h2">Project Overview</h2>
+        <p class="cs_body">
+          Carrying out a major operational study allowed us to elevate data
+          handling and streamline core tasks. By engaging each department
+          thoroughly, we minimized wasted energy and promoted transparent
+          communication. These changes empower the workforce to address key
+          goals efficiently while boosting productivity. Advanced resources
+          drive sustained innovation. Frequent reviews keep teams aligned
+          with strategic objectives.
+        </p>
+        <ul class="cs_list">
+          <li>It brings the right people together with all the right information and tools to get work done</li>
+          <li>We provide operational efficiency, data security, and flexible scale</li>
+          <li>Your best work, together in one package that works seamlessly from your computer</li>
+          <li>Delivers the tools you need to save time improve field performance always</li>
+        </ul>
+      </section>
+
+      <section class="cs_section">
+        <h2 class="cs_h2">Storyboard</h2>
+        <p class="cs_body">
+          Completely synergize resource taxing relationships via premier niche
+          markets. Professionally cultivate one-to-one customer service with
+          robust ideas. Dynamically innovate resource-leveling customer service
+          for state of the art customer service. Objectively innovate empowered
+          manufactured products whereas parallel platforms. Holistically
+          predominate extensible testing procedures for reliable supply chains.
+        </p>
+        <p class="cs_body">
+          Proactively envisioned multimedia based expertise and cross-media
+          growth strategies. Seamlessly visualize quality intellectual capital
+          without superior collaboration and idea-sharing. Holistically
+          pontificate installed base portals after maintainable products
+          completely pursue scalable customer service.
+        </p>
+        <img
+          src={image5.src}
+          alt="Two colleagues working together"
+          class="cs_image_inline"
+          width="600"
+          height="400"
+        />
+      </section>
+
+      <section class="cs_section">
+        <h2 class="cs_h2">Project result</h2>
+        <p class="cs_body">
+          Leverage agile frameworks to provide a robust synopsis for high level
+          overviews. Iterative approaches to corporate strategy foster
+          collaborative thinking to further the overall value proposition.
+          Organically grow the holistic world view of disruptive innovation via
+          workplace diversity and empowerment.
+        </p>
+        <p class="cs_body">
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day, going forward, a new normal that
+          has evolved from generation X is on the runway heading towards a
+          streamlined cloud solution. User generated content in real-time will
+          have multiple touchpoints for offshoring.
+        </p>
+      </section>
+
+    </div>
+  </article>
+
+  <Newsletter />
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .cs_hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-3xl) var(--space-l) var(--space-2xl);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f9fafb 66%);
+  }
+
+  .cs_hero_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .cs_eyebrow {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 147.5%;
+    letter-spacing: 2.32px;
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .cs_title {
+    font-family: "Cabin Variable";
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+    margin: 0;
+    text-decoration: underline;
+    text-decoration-color: var(--color-yellow);
+    text-decoration-thickness: 7px;
+    text-underline-offset: 6px;
+  }
+
+  .cs_subtitle {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 147.5%;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Artikel */
+  .cs_article {
+    --flow-space: var(--space-2xl);
+    margin: 0 auto;
+    padding: 0 var(--space-l) var(--space-3xl);
+  }
+
+  .flow > * + * {
+    margin-top: var(--flow-space, var(--space-m));
+  }
+
+  .cs_article_inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Sektioner og inline-billede centreres til 709px */
+  .cs_section,
+  .cs_image_inline {
+    max-width: 709px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  /* Hovedbillede med meta-bar */
+  .cs_image_wrap {
+    position: relative;
+    padding-bottom: calc(167px * 0.75);
+  }
+
+  .cs_image_main {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1200 / 451;
+    background: var(--color-gray);
+    border-radius: 16px;
+  }
+
+  .cs_image_meta {
+    background: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    width: 1028px;
+    max-width: 90%;
+    height: 167px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cs_meta_items_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 550px;
+    max-width: 100%;
+  }
+
+  .cs_meta_item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+  }
+
+  .cs_meta_label {
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 148%;
+  }
+
+  .cs_meta_value {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-muted);
+    line-height: 148%;
+  }
+
+  .cs_meta_cta {
+    margin-left: auto;
+  }
+
+  /* Sektioner */
+  .cs_section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+
+  .cs_h2 {
+    font-family: "Cabin Variable";
+    font-size: var(--step-2);
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .cs_body {
+    font-family: "Lato";
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .cs_list {
+    list-style: disc;
+    padding-left: var(--space-m);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .cs_list li {
+    font-family: "Lato";
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-text-muted);
+  }
+
+  .cs_image_inline {
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    aspect-ratio: 709 / 365;
+    background: var(--color-gray);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cs_title {
+      font-size: var(--step-3);
+    }
+
+    .cs_image_meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-s);
+    }
+
+    .cs_meta_cta {
+      margin-left: 0;
+    }
+  }
+</style>
