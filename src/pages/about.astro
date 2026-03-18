@@ -102,10 +102,179 @@ import Button from "../components/Button.astro";
       </div>
     </div>
   </section>
+  <section class="faq">
+    <div class="faq__card">
+      <div class="faq__header">
+        <p class="faq__eyebrow">FAQ</p>
+        <h2 class="faq__title">Customer Questions</h2>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq__item">
+          <div class="faq__question-row">
+            <h3 class="faq__question">
+              What will happen when I’ve sent my application?
+            </h3>
+            <button class="faq__toggle" aria-label="Open FAQ item" type="button"
+              >+</button
+            >
+          </div>
+        </div>
+
+        <div class="faq__item faq__item--open">
+          <div class="faq__question-row">
+            <h3 class="faq__question">
+              Can I get a free trial before I purchase?
+            </h3>
+            <button
+              class="faq__toggle"
+              aria-label="Close FAQ item"
+              type="button">−</button
+            >
+          </div>
+          <p class="faq__answer">
+            Ippsum is the result of synergy between our teams and our customers.
+            Our company culture is focused on excellent productivity, customer
+            satisfaction, respect for team and individual achievements.
+          </p>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question-row">
+            <h3 class="faq__question">
+              What should I include in my personal statement?
+            </h3>
+            <button class="faq__toggle" aria-label="Open FAQ item" type="button"
+              >+</button
+            >
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question-row">
+            <h3 class="faq__question">
+              Will membership plans be charged automatically?
+            </h3>
+            <button class="faq__toggle" aria-label="Open FAQ item" type="button"
+              >+</button
+            >
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question-row">
+            <h3 class="faq__question">
+              What will happen when I’ve sent my application?
+            </h3>
+            <button class="faq__toggle" aria-label="Open FAQ item" type="button"
+              >+</button
+            >
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question-row">
+            <h3 class="faq__question">
+              Can I get a free trial before I purchase?
+            </h3>
+            <button class="faq__toggle" aria-label="Open FAQ item" type="button"
+              >+</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <Footer />
 </Layout>
 
 <style>
+  .faq {
+    padding: 80px 20px;
+
+    margin-bottom: 300px;
+  }
+
+  .faq__card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--color-surface-secondary, #f9fafb);
+    border-radius: 24px;
+    padding: 150px 200px 150px;
+  }
+
+  .faq__header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .faq__eyebrow {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+
+    font-family: Lato;
+  }
+
+  .faq__title {
+    margin: 0;
+    font-family: "Cabin Variable", sans-serif;
+    font-size: 46px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq__item {
+    border-bottom: 1px solid #d9d9d9;
+    padding: 0;
+  }
+
+  .faq__question-row {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .faq__question {
+    margin: 0;
+    font-family: Cabin Variable;
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .faq__toggle {
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  .faq__answer {
+    margin: -4px 0 14px;
+    max-width: 520px;
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
   .team__section {
     display: flex;
     padding: 100px 360px;
