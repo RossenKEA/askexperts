@@ -1,0 +1,129 @@
+---
+---
+
+<section id="cards">
+  <div id="cards_inner">
+    <ul id="cards_grid">
+      <li class="card">
+        <h3 class="card_title">Finance & Restructuring</h3>
+        <p class="card_body">Unlock financial clarity and implement effective restructuring strategies.</p>
+        <a href="#" class="card_link">Explore Finance →</a>
+      </li>
+      <li class="card">
+        <h3 class="card_title">Our Approach</h3>
+        <p class="card_body">Explore our proven methods for achieving growth and building resilience through customized solutions.</p>
+        <a href="#" class="card_link">Explore Approach →</a>
+      </li>
+      <li class="card">
+        <h3 class="card_title">Consultalk Result</h3>
+        <p class="card_body">Experience actionable insights and measurable results through expert consultation and tailored guidance.</p>
+        <a href="#" class="card_link">Explore Consultalk →</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  #cards {
+    width: 100%;
+    margin-top: -160px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: var(--space-xl);
+  }
+
+  #cards_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Subgrid */
+  #cards_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr auto;
+    column-gap: var(--space-m);
+    row-gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    background: rgba(16, 24, 40, 0.9);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(32px);
+    padding: 32px;
+    box-sizing: border-box;
+    height: 264px;
+  }
+
+  .card_title {
+    font-family: "Cabin Variable";
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 130%;
+    color: var(--color-white);
+    margin: 0;
+  }
+
+  .card_body {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-white);
+    margin: 0;
+    align-self: start;
+  }
+
+  .card_link {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-yellow);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    align-self: end;
+  }
+
+  .card_link:hover {
+    color: hsl(from var(--color-yellow) h s calc(l + 15%));
+  }
+
+  @supports not (color: hsl(from red h s l)) {
+    .card_link:hover {
+      color: var(--color-white);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    #cards_inner {
+      padding: 0 var(--space-l);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #cards {
+      margin-top: calc(-1 * var(--space-xl));
+    }
+
+    #cards_grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+    }
+
+    .card {
+      grid-row: span 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-s);
+      height: auto;
+    }
+  }
+</style>

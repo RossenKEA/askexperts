@@ -1,0 +1,177 @@
+---
+import photo from "../assets/photo.jpg";
+---
+
+<section id="wte">
+  <div id="wte_inner">
+
+    <div id="wte_image_wrap">
+      <div id="wte_accent" aria-hidden="true"></div>
+      <img
+        src={photo.src}
+        alt="Team collaborating around a table"
+        id="wte_image"
+        width="600"
+        height="450"
+      />
+    </div>
+
+    <div id="wte_content" class="flow">
+      <p class="wte_eyebrow">WE'LL WORK WITH YOU</p>
+      <h2 class="wte_heading">What To Expect</h2>
+      <p class="wte_body">
+        Our collaboration is built on transparency, efficiency, and measurable results.
+        Together, we create strategies tailored to your unique needs and goals.
+      </p>
+      <ul id="wte_list">
+        <li class="wte_item">
+          <svg class="wte_check" viewBox="0 0 20 20" aria-hidden="true">
+            <circle cx="10" cy="10" r="10" fill="#a4eda4" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="10" fill="none" stroke="#a4eda4" stroke-width="1.5"/>
+            <polyline points="5,10 8.5,13.5 15,7" fill="none" stroke="#a4eda4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.</span>
+        </li>
+        <li class="wte_item">
+          <svg class="wte_check" viewBox="0 0 20 20" aria-hidden="true">
+            <circle cx="10" cy="10" r="10" fill="#a4eda4" fill-opacity="0.2"/>
+            <circle cx="10" cy="10" r="10" fill="none" stroke="#a4eda4" stroke-width="1.5"/>
+            <polyline points="5,10 8.5,13.5 15,7" fill="none" stroke="#a4eda4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Identify opportunities to optimize processes and implement impactful solutions with measurable results.</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Flow */
+  .flow > * + * {
+    margin-top: var(--flow-space);
+  }
+
+  #wte {
+    background: var(--color-white);
+    width: 100%;
+    padding: var(--space-2xl) 0 var(--space-3xl);
+  }
+
+  #wte_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  /* Billede */
+  #wte_image_wrap {
+    position: relative;
+  }
+
+  #wte_accent {
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    width: 183px;
+    height: 164px;
+    background: var(--color-green);
+    border-radius: 20px;
+    z-index: 0;
+  }
+
+  #wte_image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Indhold */
+  #wte_content {
+    --flow-space: var(--space-s);
+  }
+
+  .wte_eyebrow {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+    letter-spacing: 0.145em;
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .wte_heading {
+    font-family: "Cabin Variable";
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .wte_body {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 148%;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  #wte_list {
+    list-style: none;
+    margin: var(--space-l) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+
+  .wte_item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    font-family: "Cabin Variable";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 116%;
+    color: var(--color-text-muted);
+  }
+
+  .wte_check {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  @media (max-width: 1280px) {
+    #wte_inner {
+      padding: 0 var(--space-l);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #wte_inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      padding: 0 var(--space-l);
+    }
+
+    #wte_accent {
+      top: -12px;
+      left: -12px;
+      width: 100px;
+      height: 80px;
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 interface Props {
   text: string;
   paddingX?: string;
+  paddingY?: string;
   bgColor?: string;
   textColor?: string;
   borderColor?: string;
@@ -12,6 +13,7 @@ interface Props {
 const {
   text,
   paddingX = "16px",
+  paddingY = "4px",
   bgColor = "#000000",
   textColor = "#f9fafb",
   borderColor = "transparent",
@@ -22,7 +24,7 @@ const {
 
 <button
   class="btn"
-  style={`--btn-padding-x:${paddingX}; --btn-bg:${bgColor}; --btn-text-color:${textColor}; --btn-border:${borderColor};`}
+  style={`--btn-padding-x:${paddingX}; --btn-padding-y:${paddingY}; --btn-bg:${bgColor}; --btn-text-color:${textColor}; --btn-border:${borderColor};`}
   id={id}
   popovertarget={popovertarget}
 >
@@ -32,7 +34,7 @@ const {
 <style>
   .btn {
     display: flex;
-    padding: 4px var(--btn-padding-x);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
     justify-content: center;
     align-items: center;
     gap: 10px;

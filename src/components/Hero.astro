@@ -17,12 +17,14 @@ import Button from "./Button.astro";
         <Button
           text="Book a Meeting"
           paddingX="24px"
+          paddingY="12px"
           bgColor="var(--color-yellow)"
           textColor="var(--color-black)"
         />
         <Button
           text="Learn More →"
           paddingX="24px"
+          paddingY="12px"
           bgColor="transparent"
           textColor="var(--color-white)"
           borderColor="var(--color-white)"
@@ -35,21 +37,24 @@ import Button from "./Button.astro";
 <style>
   #hero {
     width: 100%;
-    min-height: 560px;
-    background-image: url("/banner.png");
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
+    min-height: 520px;
+    background-image:
+      url("/banner.png"),
+      repeating-linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: auto 100%, 44px 44px, 44px 44px;
+    background-position: right -180px top 0px, 0 0, 0 0;
+    background-repeat: no-repeat, repeat, repeat;
     position: relative;
   }
 
   #hero_inner {
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 560px;
+    min-height: 520px;
     display: flex;
     align-items: flex-start;
-    padding: 120px 0 var(--space-2xl);
+    padding: var(--space-xl) 0 var(--space-2xl);
   }
 
   #hero_content {
@@ -61,7 +66,7 @@ import Button from "./Button.astro";
 
   .hero_heading {
     font-family: "Cabin Variable";
-    font-size: var(--step-4);
+    font-size: 50px;
     font-weight: 700;
     line-height: 115%;
     color: var(--color-white);
@@ -79,7 +84,7 @@ import Button from "./Button.astro";
 
   .hero_subtitle {
     font-family: "Lato";
-    font-size: var(--step-0);
+    font-size: 18px;
     font-weight: 400;
     line-height: 160%;
     color: var(--color-muted);
@@ -88,8 +93,13 @@ import Button from "./Button.astro";
 
   #hero_buttons {
     display: flex;
+    align-items: center;
     gap: var(--space-s);
     flex-wrap: wrap;
+  }
+
+  #hero_buttons :global(.btn) {
+    align-self: center;
   }
 
   @media (max-width: 768px) {
