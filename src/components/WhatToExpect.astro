@@ -8,6 +8,7 @@ export interface Props {
   items?: string[];
   imageSrc?: string;
   imageAlt?: string;
+  reverse?: boolean;
 }
 
 const {
@@ -21,11 +22,12 @@ const {
   ],
   imageSrc = photo.src,
   imageAlt = "Team collaborating around a table",
+  reverse = false,
 } = Astro.props;
 ---
 
 <section id="wte">
-  <div id="wte_inner">
+  <div id="wte_inner" class={reverse ? "reverse" : ""}>
     <div id="wte_image_wrap">
       <div id="wte_accent" aria-hidden="true"></div>
       <img
@@ -97,6 +99,14 @@ const {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
     align-items: center;
+  }
+
+  #wte_inner.reverse {
+    direction: rtl;
+  }
+
+  #wte_inner.reverse > * {
+    direction: ltr;
   }
 
   /* Billede */
