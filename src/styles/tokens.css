@@ -8,6 +8,7 @@
   --color-muted:       #99a1af;
   --color-text-muted:  #5a606f;
   --color-border:      #2b3a58;
+  --color-border-light: #eaeaea;
 
   /* Typografi */
   --step--1: clamp(0.69rem, 0.6rem + 0.28vw, 0.83rem);
