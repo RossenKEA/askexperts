@@ -1,4 +1,4 @@
-/* ─── Login Popover ──────────────────────────────────── */
+/* Login */
 #login-popover {
   background: var(--color-white, #f9fafb);
   border: none;
@@ -97,7 +97,7 @@
   border-color: var(--color-black, #030712);
 }
 
-/* ─── Footer ─────────────────────────────────────────── */
+/* Footer */
 #footer {
   background: var(--color-black, #030712);
   border-top: 1px solid var(--color-border, #2b3a58);
