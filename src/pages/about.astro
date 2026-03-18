@@ -5,6 +5,9 @@ import Footer from "../components/Footer.astro";
 import WhatToExpect from "../components/WhatToExpect.astro";
 import CoreValues from "../components/CoreValues.astro";
 import ourvisionImage from "../assets/ourvision.png";
+import teamImage1 from "../assets/team1.png";
+import teamImage2 from "../assets/team2.png";
+import Button from "../components/Button.astro";
 ---
 
 <Layout>
@@ -53,10 +56,190 @@ import ourvisionImage from "../assets/ourvision.png";
     </div>
   </div>
   <CoreValues />
+  <section class="team__section">
+    <div class="team__content">
+      <div class="team__textcontent">
+        <div class="team__subtext">
+          <p>OUR TEAM</p>
+        </div>
+        <div class="team__text">
+          <h1>We champion the bold</h1>
+          <p>
+            Our success stems from the synergy between dedicated teams and our
+            valued clients. We prioritize a company culture that fosters
+            exceptional productivity, ensures customer satisfaction.
+          </p>
+        </div>
+        <Button id="team-btn" text="Meet the Team" paddingX="16px" />
+      </div>
+      <div class="team__team">
+        <div class="team__responsive">
+          <img src={teamImage1.src} alt="woman" />
+          <div class="team__responsivetext">
+            <div>
+              <h2>Sarah Jasmine</h2>
+              <h3>CEO at Company</h3>
+              <p>
+                Driving innovation and leadership with a focus on strategic
+                growth and impactful decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="team__responsive">
+          <img src={teamImage2.src} alt="man" />
+          <div class="team__responsivetext">
+            <div>
+              <h2>John Carter</h2>
+              <h3>Manager</h3>
+              <p>
+                Expert in operational efficiency, ensuring smooth processes and
+                exceptional team performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <Footer />
 </Layout>
 
 <style>
+  .team__section {
+    display: flex;
+    padding: 100px 360px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .team__content {
+    display: inline-grid;
+    row-gap: 32px;
+    column-gap: 32px;
+    grid-template-rows: repeat(1, fit-content(100%));
+  }
+
+  .team__textcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    align-self: stretch;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .team__subtext {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 20px;
+  }
+  .team__subtext p {
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 23.6px */
+    letter-spacing: 2.32px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .team__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+    align-self: stretch;
+  }
+  .team__text h1 {
+    font-family: Cabin Variable;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 116%; /* 52.2px */
+    align-self: stretch;
+    margin: 0;
+  }
+  .team__text p {
+    margin: 0;
+    align-self: stretch;
+    color: var(--color-text-muted);
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 23.6px */
+  }
+
+  .team__team {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    justify-self: stretch;
+  }
+  .team__responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    align-self: stretch;
+  }
+  .team__responsive img {
+    width: 210px;
+    height: 224.918px;
+    aspect-ratio: 183/196;
+  }
+  .team__responsivetext {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    flex: 1 0 0;
+  }
+  .team__responsivetext div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    align-self: stretch;
+  }
+  .team__responsivetext h2 {
+    text-align: center;
+    font-family: Cabin Variable;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 116%; /* 34.8px */
+    margin: 0;
+  }
+  .team__responsivetext h3 {
+    margin: 0;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 28.8px */
+  }
+  .team__responsivetext p {
+    margin: 0;
+    align-self: stretch;
+    color: var(--color-text-muted);
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 26.55px */
+  }
+  .team__section img {
+    border-radius: 20px;
+  }
+
   .hero {
     display: flex;
     flex-direction: column;
