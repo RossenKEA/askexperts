@@ -7,7 +7,15 @@ import Footer from "../components/Footer.astro";
 <Layout>
   <Header />
   <section id="about_hero">
-    <h1>Igniting Innovation</h1>
+    <div id="about_hero-text1">
+      <p>ABOUT</p>
+      <h1>Igniting Innovation</h1>
+    </div>
+    <p id="about_hero-p">
+      Our strength lies in the collaboration between our talented teams and
+      esteemed clients. We cultivate a workplace that champions innovation,
+      promotes peak performance, and guarantees client satisfaction.
+    </p>
   </section>
   <Footer />
 </Layout>
@@ -15,11 +23,53 @@ import Footer from "../components/Footer.astro";
 <style>
   #about_hero {
     display: flex;
-    width: 1920px;
-    height: 504px;
     padding: 100px 360px;
     flex-direction: column;
     align-items: center;
     gap: 40px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f9fafb 66%);
+  }
+  #about_hero-text1 {
+    flex-shrink: 0;
+  }
+  #about_hero-text1 p {
+    text-align: center;
+    color: action;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 23.6px */
+    letter-spacing: 2.32px;
+    text-transform: uppercase;
+  }
+  #about_hero h1 {
+    color: action;
+    font-size: 60px;
+    font-style: normal;
+    font-family: Cabin Variable;
+    font-weight: 700;
+    line-height: 116%; /* 69.6px */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--color-yellow);
+    text-decoration-skip-ink: auto;
+    text-decoration-color: action;
+    text-decoration-thickness: 7px; /* 11.667% */
+    text-underline-offset: 6px; /* 10% */
+    text-underline-position: from-font;
+  }
+
+  #about_hero-p {
+    width: 700px;
+
+    color: var(--color-text-muted);
+    text-align: center;
+    font-family: Lato;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 32.45px */
   }
 </style>
