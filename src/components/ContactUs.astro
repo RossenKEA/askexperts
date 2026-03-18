@@ -1,0 +1,288 @@
+---
+import phone from "../assets/phone.png";
+import time from "../assets/time.png";
+import location from "../assets/location.png";
+import image1 from "../assets/image1.png";
+import image2 from "../assets/image2.png";
+import image3 from "../assets/image3.png";
+---
+
+<section id="contact">
+  <div id="contact_inner">
+
+    <div id="contact_content" class="flow">
+      <p class="contact_eyebrow">PROCESS</p>
+      <h2 class="contact_heading">Contact Us. It's Easy.</h2>
+      <p class="contact_body">
+        Leverage agile frameworks to provide a robust synopsis for high level
+        overviews. Iterative approaches to corporate strategy foster
+        collaborative.
+      </p>
+
+      <ul id="contact_list">
+        <li class="contact_item">
+          <div class="contact_icon_wrap contact_icon_wrap--yellow">
+            <img src={phone.src} alt="" aria-hidden="true" class="contact_icon" width="24" height="24" />
+          </div>
+          <div class="contact_item_text">
+            <span class="contact_item_label">Call Today</span>
+            <span class="contact_item_value">+1 800 100 900</span>
+          </div>
+        </li>
+
+        <li class="contact_item">
+          <div class="contact_icon_wrap contact_icon_wrap--green">
+            <img src={time.src} alt="" aria-hidden="true" class="contact_icon" width="24" height="24" />
+          </div>
+          <div class="contact_item_text">
+            <span class="contact_item_label">Monday To Friday</span>
+            <span class="contact_item_value">9AM – 5PM</span>
+          </div>
+        </li>
+
+        <li class="contact_item">
+          <div class="contact_icon_wrap contact_icon_wrap--gray">
+            <img src={location.src} alt="" aria-hidden="true" class="contact_icon" width="24" height="24" />
+          </div>
+          <div class="contact_item_text">
+            <span class="contact_item_label">USA Office</span>
+            <span class="contact_item_value">195 Devonshire St Boston, MA 02110</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div id="contact_images">
+      <div id="contact_accent" aria-hidden="true"></div>
+      <img
+        src={image1.src}
+        alt="Team consultant"
+        id="contact_image_main"
+        width="300"
+        height="420"
+      />
+      <div id="contact_images_right">
+        <img
+          src={image2.src}
+          alt="Team meeting"
+          class="contact_image_side"
+          width="240"
+          height="200"
+        />
+        <img
+          src={image3.src}
+          alt="Team applauding"
+          class="contact_image_side"
+          width="240"
+          height="200"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Flow utility */
+  .flow > * + * {
+    margin-top: var(--flow-space, var(--space-m));
+  }
+
+  #contact {
+    width: 100%;
+    background: var(--color-white);
+    padding: var(--space-3xl) 0;
+  }
+
+  #contact_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  /* Indhold */
+  #contact_content {
+    --flow-space: var(--space-s);
+  }
+
+  .contact_eyebrow {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+    letter-spacing: 0.145em;
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .contact_heading {
+    font-family: "Cabin Variable";
+    font-size: var(--step-3);
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .contact_body {
+    font-family: "Lato";
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 148%;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Kontaktliste */
+  #contact_list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-l) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .contact_item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+  }
+
+  .contact_icon_wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact_icon_wrap--yellow {
+    background: hsl(from var(--color-yellow) h s l / 0.2);
+  }
+
+  .contact_icon_wrap--green {
+    background: hsl(from var(--color-green) h s l / 0.4);
+  }
+
+  .contact_icon_wrap--gray {
+    background: var(--color-gray);
+  }
+
+  @supports not (color: hsl(from red h s l)) {
+    .contact_icon_wrap--yellow {
+      background: rgba(251, 195, 54, 0.2);
+    }
+    .contact_icon_wrap--green {
+      background: rgba(164, 237, 164, 0.4);
+    }
+  }
+
+  .contact_icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .contact_item_text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+  }
+
+  .contact_item_label {
+    font-family: "Lato";
+    font-size: var(--step--1);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    line-height: 148%;
+  }
+
+  .contact_item_value {
+    font-family: "Cabin Variable";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-black);
+    line-height: 120%;
+  }
+
+  /* Billedgalleri */
+  #contact_images {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-s);
+    align-items: start;
+    padding-bottom: 60px;
+  }
+
+  #contact_accent {
+    position: absolute;
+    bottom: 0;
+    left: -40px;
+    width: 307px;
+    height: 164px;
+    background: var(--color-green);
+    border-radius: 20px;
+    z-index: 2;
+  }
+
+  #contact_image_main {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+  #contact_images_right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    position: relative;
+    z-index: 3;
+  }
+
+  .contact_image_side {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Responsive */
+  @media (max-width: 1280px) {
+    #contact_inner {
+      padding: 0 var(--space-l);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #contact_inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      padding: 0 var(--space-l);
+    }
+
+    #contact_images {
+      order: -1;
+    }
+
+    #contact_accent {
+      bottom: -12px;
+      left: 30px;
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>
