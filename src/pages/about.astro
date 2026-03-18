@@ -2,152 +2,171 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import greenmark from "../assets/icon_greenmark.png";
+
+const visionItems = [
+  "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.",
+  "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.",
+];
 ---
 
 <Layout>
   <Header />
-  <section id="about_hero">
-    <div id="about_hero-text1">
-      <p>ABOUT</p>
-      <h1>Igniting Innovation</h1>
+
+  <section class="hero">
+    <div class="hero__heading">
+      <p class="hero__label">ABOUT</p>
+      <h1 class="hero__title">Igniting Innovation</h1>
     </div>
-    <p id="about_hero-p">
+
+    <p class="hero__subhead">
       Our strength lies in the collaboration between our talented teams and
       esteemed clients. We cultivate a workplace that champions innovation,
       promotes peak performance, and guarantees client satisfaction.
     </p>
   </section>
-  <section>
-    <div id="about_container1">
-      <div id="about_textcontent">
-        <div id="about_container-title">
-          <p>ABOUT</p>
-        </div>
-        <div id="about_container-text">
-          <h1>Turn your ideas into reality.</h1>
-          <p>
-            Capitalize on low hanging fruit to identify a ballpark value added
-            activity beta test. Override the digital divide with additional from
-            DevOps.
-          </p>
-        </div>
-      </div>
-      <div></div>
-    </div>
+
+  <section class="section">
+    <header class="section__header">
+      <p class="section__label">OUR VISION</p>
+      <h2 class="section__title">Turn your ideas into reality.</h2>
+      <p class="section__copy">
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+    </header>
+
+    <ul class="checklist">
+      {
+        visionItems.map((text) => (
+          <li class="checklist__item">
+            <Image
+              src={greenmark}
+              alt="Green checkmark"
+              class="checklist__icon"
+            />
+            <p class="checklist__text">{text}</p>
+          </li>
+        ))
+      }
+    </ul>
   </section>
+
   <Footer />
 </Layout>
 
 <style>
-  #about_hero {
+  .hero {
     display: flex;
-    padding: 100px 360px;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-
+    padding: 100px 2.5rem;
+    margin-bottom: 100px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f9fafb 66%);
   }
-  #about_hero-text1 {
-    flex-shrink: 0;
-  }
-  #about_hero-text1 p {
+
+  .hero__label,
+  .section__label {
     text-align: center;
     color: action;
     font-family: Lato;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 147.5%; /* 23.6px */
+    line-height: 147.5%;
     letter-spacing: 2.32px;
     text-transform: uppercase;
   }
-  #about_hero h1 {
+
+  .hero__title {
+    margin: 0;
     color: action;
+    font-family: "Cabin Variable";
     font-size: 60px;
-    font-style: normal;
-    font-family: Cabin Variable;
     font-weight: 700;
-    line-height: 116%; /* 69.6px */
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-color: var(--color-yellow);
-    text-decoration-skip-ink: auto;
+    line-height: 116%;
+    text-decoration: underline;
     text-decoration-color: action;
-    text-decoration-thickness: 7px; /* 11.667% */
-    text-underline-offset: 6px; /* 10% */
-    text-underline-position: from-font;
+    text-decoration-thickness: 7px;
+    text-underline-offset: 6px;
   }
 
-  #about_hero-p {
-    width: 700px;
-
-    color: var(--color-text-muted);
+  .hero__subhead {
+    max-width: 700px;
     text-align: center;
+    color: var(--color-text-muted);
     font-family: Lato;
     font-size: 22px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 147.5%; /* 32.45px */
+    line-height: 147.5%;
   }
 
-  #about_container1 {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 122px;
-  }
-  #about_textcontent {
-    display: flex;
-    width: 590px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 19px;
-  }
-
-  #about_container-title {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-
-    border-radius: 20px;
-  }
-
-  #about_container-title p {
-    color: action;
-    text-align: center;
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 147.5%; /* 23.6px */
-    letter-spacing: 2.32px;
-    text-transform: uppercase;
-  }
-
-  #about_container-text {
+  .section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 32px;
+    max-width: 980px;
+    margin: 0 auto 100px;
+    padding: 0 2.5rem;
+  }
+
+  .section__header {
+    display: flex;
+    flex-direction: column;
     gap: 14px;
+    width: 100%;
+    max-width: 590px;
   }
 
-  #about_container-text h1 {
+  .section__title {
+    margin: 0;
     color: action;
-    font-family: Cabin Variable;
+    font-family: "Cabin Variable";
     font-size: 45px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 116%; /* 52.2px */
+    line-height: 116%;
   }
 
-  #about_container-text p {
-    width: 590px;
-
-    color: action;
+  .section__copy {
+    margin: 0;
+    color: var(--color-text-muted);
     font-family: Lato;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 147.5%; /* 23.6px */
+    line-height: 147.5%;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 590px;
+  }
+
+  .checklist__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .checklist__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checklist__text {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-family: "Cabin Variable";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 116%;
   }
 </style>
