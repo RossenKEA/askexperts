@@ -2,13 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Image } from "astro:assets";
-import greenmark from "../assets/icon_greenmark.png";
-
-const visionItems = [
-  "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.",
-  "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.",
-];
+import WhatToExpect from "../components/WhatToExpect.astro";
 ---
 
 <Layout>
@@ -26,34 +20,7 @@ const visionItems = [
       promotes peak performance, and guarantees client satisfaction.
     </p>
   </section>
-
-  <section class="section">
-    <header class="section__header">
-      <p class="section__label">OUR VISION</p>
-      <h2 class="section__title">Turn your ideas into reality.</h2>
-      <p class="section__copy">
-        Capitalize on low hanging fruit to identify a ballpark value added
-        activity beta test. Override the digital divide with additional from
-        DevOps.
-      </p>
-    </header>
-
-    <ul class="checklist">
-      {
-        visionItems.map((text) => (
-          <li class="checklist__item">
-            <Image
-              src={greenmark}
-              alt="Green checkmark"
-              class="checklist__icon"
-            />
-            <p class="checklist__text">{text}</p>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
+  <WhatToExpect />
   <Footer />
 </Layout>
 
@@ -68,8 +35,7 @@ const visionItems = [
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f9fafb 66%);
   }
 
-  .hero__label,
-  .section__label {
+  .hero__label {
     text-align: center;
     color: action;
     font-family: Lato;
@@ -88,7 +54,7 @@ const visionItems = [
     font-weight: 700;
     line-height: 116%;
     text-decoration: underline;
-    text-decoration-color: action;
+    text-decoration-color: var(--color-yellow);
     text-decoration-thickness: 7px;
     text-underline-offset: 6px;
   }
@@ -101,72 +67,5 @@ const visionItems = [
     font-size: 22px;
     font-weight: 400;
     line-height: 147.5%;
-  }
-
-  .section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    max-width: 980px;
-    margin: 0 auto 100px;
-    padding: 0 2.5rem;
-  }
-
-  .section__header {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 100%;
-    max-width: 590px;
-  }
-
-  .section__title {
-    margin: 0;
-    color: action;
-    font-family: "Cabin Variable";
-    font-size: 45px;
-    font-weight: 700;
-    line-height: 116%;
-  }
-
-  .section__copy {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-family: Lato;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 147.5%;
-  }
-
-  .checklist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    max-width: 590px;
-  }
-
-  .checklist__item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .checklist__icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .checklist__text {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-family: "Cabin Variable";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 116%;
   }
 </style>
