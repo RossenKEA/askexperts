@@ -8,10 +8,10 @@ import Login from "./Login.astro";
   <div id="header_inner">
     <Logo />
     <ul>
-      <li>Home</li>
+      <li><a href="/">Home</a></li>
       <li>Case Study</li>
       <li>Team</li>
-      <li>About</li>
+      <li><a href="about">About</a></li>
     </ul>
     <div id="header_button">
       <Button
@@ -71,6 +71,11 @@ import Login from "./Login.astro";
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
+  }
+
+  header a {
+    text-decoration: none;
+    color: inherit;
   }
 
   #header_button {

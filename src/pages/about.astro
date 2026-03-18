@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <section id="about_hero">
+    <h1>Igniting Innovation</h1>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  #about_hero {
+    display: flex;
+    width: 1920px;
+    height: 504px;
+    padding: 100px 360px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+</style>
