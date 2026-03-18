@@ -17,6 +17,24 @@ import Footer from "../components/Footer.astro";
       promotes peak performance, and guarantees client satisfaction.
     </p>
   </section>
+  <section>
+    <div id="about_container1">
+      <div id="about_textcontent">
+        <div id="about_container-title">
+          <p>ABOUT</p>
+        </div>
+        <div id="about_container-text">
+          <h1>Turn your ideas into reality.</h1>
+          <p>
+            Capitalize on low hanging fruit to identify a ballpark value added
+            activity beta test. Override the digital divide with additional from
+            DevOps.
+          </p>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </section>
   <Footer />
 </Layout>
 
@@ -71,5 +89,65 @@ import Footer from "../components/Footer.astro";
     font-style: normal;
     font-weight: 400;
     line-height: 147.5%; /* 32.45px */
+  }
+
+  #about_container1 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 122px;
+  }
+  #about_textcontent {
+    display: flex;
+    width: 590px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+  }
+
+  #about_container-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 20px;
+  }
+
+  #about_container-title p {
+    color: action;
+    text-align: center;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 23.6px */
+    letter-spacing: 2.32px;
+    text-transform: uppercase;
+  }
+
+  #about_container-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  #about_container-text h1 {
+    color: action;
+    font-family: Cabin Variable;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 116%; /* 52.2px */
+  }
+
+  #about_container-text p {
+    width: 590px;
+
+    color: action;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 23.6px */
   }
 </style>
