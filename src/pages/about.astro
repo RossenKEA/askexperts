@@ -34,6 +34,24 @@ import ourvisionImage from "../assets/ourvision.png";
       "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.",
     ]}
   />
+  <div class="counter">
+    <div class="counter__text">
+      <h1>1128+</h1>
+      <p>Successful Work</p>
+    </div>
+    <div class="counter__text">
+      <h1>908+</h1>
+      <p>Team member</p>
+    </div>
+    <div class="counter__text">
+      <h1>258+</h1>
+      <p>Happy Customers</p>
+    </div>
+    <div class="counter__text">
+      <h1>564+</h1>
+      <p>Creative Idea</p>
+    </div>
+  </div>
   <CoreValues />
   <Footer />
 </Layout>
@@ -81,5 +99,42 @@ import ourvisionImage from "../assets/ourvision.png";
     font-size: 22px;
     font-weight: 400;
     line-height: 147.5%;
+  }
+
+  .counter {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 135px;
+  }
+
+  .counter__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .counter h1 {
+    margin: 0;
+    font-family: Cabin Variable;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 116%; /* 58px */
+  }
+
+  .counter p {
+    margin: 0;
+    padding-bottom: 150px;
+    color: var(--color-text-muted);
+    font-family: Cabin Variable;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 116%; /* 20.88px */
   }
 </style>
