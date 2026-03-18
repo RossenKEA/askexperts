@@ -1,0 +1,248 @@
+---
+import icon1 from "../assets/icon1.png";
+import icon2 from "../assets/icon2.png";
+import icon3 from "../assets/icon3.svg";
+import icon4 from "../assets/icon4.png";
+---
+
+<section id="proj">
+  <div id="proj_inner">
+
+    <div id="proj_header">
+      <div id="proj_text">
+        <p class="proj_eyebrow">FINANCIAL TOOLS</p>
+        <h2 class="proj_heading">Financial Projections</h2>
+        <p class="proj_body">
+          Financial projections are essential for planning and monitoring a company's
+          performance. They provide insights into potential revenue, expenses, and
+          profitability over specific periods.
+        </p>
+      </div>
+      <div id="proj_controls">
+        <button id="proj_prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button id="proj_next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="proj_track">
+      <div class="proj_card">
+        <img src={icon1.src} alt="" class="proj_icon" aria-hidden="true" />
+        <h3 class="proj_card_title">The Balance Sheet</h3>
+        <p class="proj_card_body">The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time.</p>
+      </div>
+
+      <div class="proj_card">
+        <img src={icon2.src} alt="" class="proj_icon" aria-hidden="true" />
+        <h3 class="proj_card_title">Income Statement</h3>
+        <p class="proj_card_body">The Income (Profit and Loss) Statement, commonly referred to as the P&L statement, summarizes the revenue and expenses for a specific time period.</p>
+      </div>
+
+      <div class="proj_card">
+        <img src={icon3.src} alt="" class="proj_icon" aria-hidden="true" />
+        <h3 class="proj_card_title">Financial Plan</h3>
+        <p class="proj_card_body">Keep your information current and review the documents on a regular basis. Review them with key individuals within your company.</p>
+      </div>
+
+      <div class="proj_card">
+        <img src={icon4.src} alt="" class="proj_icon" aria-hidden="true" />
+        <h3 class="proj_card_title">Financial Ratios</h3>
+        <p class="proj_card_body">Ratios are useful when comparing your company with the competition on financial performance and also when benchmarking the performance of your company.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("proj_track") as HTMLElement;
+  const prev  = document.getElementById("proj_prev")  as HTMLButtonElement;
+  const next  = document.getElementById("proj_next")  as HTMLButtonElement;
+
+  /* prefers-reduced-motion */
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const behavior: ScrollBehavior = reduced ? "instant" : "smooth";
+
+  function getCardWidth(): number {
+    const card = track.querySelector(".proj_card") as HTMLElement;
+    const gap  = parseInt(getComputedStyle(track).gap) || 24;
+    return card.offsetWidth + gap;
+  }
+
+  prev.addEventListener("click", () =>
+    track.scrollBy({ left: -getCardWidth(), behavior })
+  );
+  next.addEventListener("click", () =>
+    track.scrollBy({ left: getCardWidth(), behavior })
+  );
+</script>
+
+<style>
+  #proj {
+    background: var(--color-white);
+    width: 100%;
+    padding: var(--space-3xl) 0;
+    overflow: hidden;
+  }
+
+  #proj_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  /* Header */
+  #proj_header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-l);
+  }
+
+  #proj_text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    max-width: 560px;
+  }
+
+  .proj_eyebrow {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+    letter-spacing: 0.145em;
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .proj_heading {
+    font-family: "Cabin Variable";
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .proj_body {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 148%;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Controls */
+  #proj_controls {
+    display: flex;
+    gap: var(--space-xs);
+    flex-shrink: 0;
+  }
+
+  #proj_controls button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-black);
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #proj_controls button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  #proj_controls button:hover {
+    background: var(--color-border);
+  }
+
+  /* Track */
+  #proj_track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  #proj_track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* prefers-reduced-motion */
+  @media (prefers-reduced-motion: no-preference) {
+    #proj_track {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Cards */
+  .proj_card {
+    flex: 0 0 379px;
+    scroll-snap-align: start;
+    background: var(--color-gray);
+    border-radius: 20px;
+    padding: 45px 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .proj_icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .proj_card_title {
+    font-family: "Cabin Variable";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 130%;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .proj_card_body {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 1280px) {
+    #proj_inner {
+      padding: 0 var(--space-l);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .proj_card {
+      flex: 0 0 80vw;
+    }
+
+    #proj_header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
