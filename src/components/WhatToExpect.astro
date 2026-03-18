@@ -1,10 +1,27 @@
 ---
 import photo from "../assets/photo.jpg";
+
+export interface Props {
+  eyebrow?: string;
+  heading?: string;
+  body?: string;
+  items?: string[];
+}
+
+const {
+  eyebrow = "WE'LL WORK WITH YOU",
+  heading = "What To Expect",
+  body = "Our collaboration is built on transparency, efficiency, and measurable results. " +
+    "Together, we create strategies tailored to your unique needs and goals.",
+  items = [
+    "Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.",
+    "Identify opportunities to optimize processes and implement impactful solutions with measurable results.",
+  ],
+} = Astro.props;
 ---
 
 <section id="wte">
   <div id="wte_inner">
-
     <div id="wte_image_wrap">
       <div id="wte_accent" aria-hidden="true"></div>
       <img
@@ -17,32 +34,44 @@ import photo from "../assets/photo.jpg";
     </div>
 
     <div id="wte_content" class="flow">
-      <p class="wte_eyebrow">WE'LL WORK WITH YOU</p>
-      <h2 class="wte_heading">What To Expect</h2>
-      <p class="wte_body">
-        Our collaboration is built on transparency, efficiency, and measurable results.
-        Together, we create strategies tailored to your unique needs and goals.
-      </p>
+      <p class="wte_eyebrow">{eyebrow}</p>
+      <h2 class="wte_heading">{heading}</h2>
+      <p class="wte_body">{body}</p>
       <ul id="wte_list">
-        <li class="wte_item">
-          <svg class="wte_check" viewBox="0 0 20 20" aria-hidden="true">
-            <circle cx="10" cy="10" r="10" fill="#a4eda4" fill-opacity="0.2"/>
-            <circle cx="10" cy="10" r="10" fill="none" stroke="#a4eda4" stroke-width="1.5"/>
-            <polyline points="5,10 8.5,13.5 15,7" fill="none" stroke="#a4eda4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.</span>
-        </li>
-        <li class="wte_item">
-          <svg class="wte_check" viewBox="0 0 20 20" aria-hidden="true">
-            <circle cx="10" cy="10" r="10" fill="#a4eda4" fill-opacity="0.2"/>
-            <circle cx="10" cy="10" r="10" fill="none" stroke="#a4eda4" stroke-width="1.5"/>
-            <polyline points="5,10 8.5,13.5 15,7" fill="none" stroke="#a4eda4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>Identify opportunities to optimize processes and implement impactful solutions with measurable results.</span>
-        </li>
+        {
+          items.map((item) => (
+            <li class="wte_item">
+              <svg class="wte_check" viewBox="0 0 20 20" aria-hidden="true">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="10"
+                  fill="#a4eda4"
+                  fill-opacity="0.2"
+                />
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="10"
+                  fill="none"
+                  stroke="#a4eda4"
+                  stroke-width="1.5"
+                />
+                <polyline
+                  points="5,10 8.5,13.5 15,7"
+                  fill="none"
+                  stroke="#a4eda4"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
-
   </div>
 </section>
 
@@ -53,7 +82,6 @@ import photo from "../assets/photo.jpg";
   }
 
   #wte {
-    background: var(--color-white);
     width: 100%;
     padding: var(--space-2xl) 0 var(--space-3xl);
   }
