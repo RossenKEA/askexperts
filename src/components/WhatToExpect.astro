@@ -6,6 +6,8 @@ export interface Props {
   heading?: string;
   body?: string;
   items?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 const {
@@ -17,6 +19,8 @@ const {
     "Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.",
     "Identify opportunities to optimize processes and implement impactful solutions with measurable results.",
   ],
+  imageSrc = photo.src,
+  imageAlt = "Team collaborating around a table",
 } = Astro.props;
 ---
 
@@ -25,8 +29,8 @@ const {
     <div id="wte_image_wrap">
       <div id="wte_accent" aria-hidden="true"></div>
       <img
-        src={photo.src}
-        alt="Team collaborating around a table"
+        src={imageSrc}
+        alt={imageAlt}
         id="wte_image"
         width="600"
         height="450"

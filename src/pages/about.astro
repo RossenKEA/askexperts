@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import WhatToExpect from "../components/WhatToExpect.astro";
+import ourvisionImage from "../assets/ourvision.png";
 ---
 
 <Layout>
@@ -21,6 +22,8 @@ import WhatToExpect from "../components/WhatToExpect.astro";
     </p>
   </section>
   <WhatToExpect
+    imageSrc={ourvisionImage.src}
+    imageAlt="Image of employees"
     eyebrow="OUR VISION"
     heading="Turn your ideas into reality."
     body="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
