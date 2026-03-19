@@ -8,23 +8,17 @@ import ourvisionImage from "../assets/ourvision.png";
 import teamImage1 from "../assets/team1.png";
 import teamImage2 from "../assets/team2.png";
 import Button from "../components/Button.astro";
+import PageHero from "../components/PageHero.astro";
 ---
 
 <Layout>
   <Header />
 
-  <section class="hero">
-    <div class="hero__heading">
-      <p class="hero__label">ABOUT</p>
-      <h1 class="hero__title">Igniting Innovation</h1>
-    </div>
-
-    <p class="hero__subhead">
-      Our strength lies in the collaboration between our talented teams and
-      esteemed clients. We cultivate a workplace that champions innovation,
-      promotes peak performance, and guarantees client satisfaction.
-    </p>
-  </section>
+  <PageHero
+    label="ABOUT"
+    title="Igniting Innovation"
+    subhead="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
+  />
   <WhatToExpect
     reverse={true}
     imageSrc={ourvisionImage.src}
@@ -407,50 +401,6 @@ import Button from "../components/Button.astro";
   }
   .team__section img {
     border-radius: 20px;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xl);
-    padding: var(--space-3xl) var(--space-l);
-    margin-bottom: var(--space-3xl);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f9fafb 66%);
-  }
-
-  .hero__label {
-    text-align: center;
-    color: var(--color-black);
-    font-family: Lato;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 147.5%;
-    letter-spacing: 2.32px;
-    text-transform: uppercase;
-  }
-
-  .hero__title {
-    margin: 0;
-    color: var(--color-black);
-    font-family: "Cabin Variable";
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 116%;
-    text-decoration: underline;
-    text-decoration-color: var(--color-yellow);
-    text-decoration-thickness: 7px;
-    text-underline-offset: 6px;
-  }
-
-  .hero__subhead {
-    max-width: 700px;
-    text-align: center;
-    color: var(--color-text-muted);
-    font-family: Lato;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 147.5%;
   }
 
   .counter {

@@ -1,71 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PageHero from "../../components/PageHero.astro";
+import instagram from "../../assets/Instagram.png";
+import facebook from "../../assets/Facebook.png";
+import { members as memberData } from "../../data/members.js";
+import sarah from "../../assets/Sarah.jpg";
+import john from "../../assets/John.jpg";
+import daisy from "../../assets/Daisy.jpg";
+import maya from "../../assets/Maya.jpg";
+import ryan from "../../assets/Ryan.png";
+import lily from "../../assets/Lily.jpg";
 
-import sarah from "../assets/Sarah.jpg";
-import john from "../assets/John.jpg";
-import daisy from "../assets/Daisy.jpg";
-import maya from "../assets/Maya.jpg";
-import ryan from "../assets/Ryan.png";
-import lily from "../assets/Lily.jpg";
-import instagram from "../assets/Instagram.png";
-import facebook from "../assets/Facebook.png";
+const photos = {
+  sarah: sarah.src,
+  john: john.src,
+  daisy: daisy.src,
+  maya: maya.src,
+  ryan: ryan.src,
+  lilly: lily.src,
+};
 
-const members = [
-  {
-    photo: sarah.src,
-    name: "Sarah Jasmine",
-    role: "CEO at Company",
-    bio: "Driving innovation and leadership with a focus on strategic growth and impactful decisions.",
-  },
-  {
-    photo: john.src,
-    name: "John Carter",
-    role: "Manager",
-    bio: "Expert in operational efficiency, ensuring smooth processes and exceptional team performance.",
-  },
-  {
-    photo: daisy.src,
-    name: "Daisy Stella",
-    role: "Visionary",
-    bio: "Inspiring creative solutions and forward-thinking approaches for groundbreaking projects.",
-  },
-  {
-    photo: maya.src,
-    name: "Maya Elizabeth",
-    role: "Strategist",
-    bio: "Crafting tailored strategies to empower business success and maximize market potential.",
-  },
-  {
-    photo: ryan.src,
-    name: "Ryan Jackson",
-    role: "Director",
-    bio: "Leading with vision and precision to align organizational goals with long-term growth.",
-  },
-  {
-    photo: lily.src,
-    name: "Lilly Victoria",
-    role: "President",
-    bio: "Championing collaboration and excellence to drive meaningful change and success.",
-  },
-];
+const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typeof photos] }));
 ---
 
 <Layout>
   <Header />
 
-  <section class="hero">
-    <div class="hero__heading">
-      <p class="hero__label">TEAM</p>
-      <h1 class="hero__title">The Consultors</h1>
-    </div>
-    <p class="hero__subhead">
-      Our success stems from the synergy between dedicated teams and our valued
-      clients. We prioritize a company culture that fosters exceptional
-      productivity, ensures customer satisfaction.
-    </p>
-  </section>
+  <PageHero
+    label="TEAM"
+    title="The Consultors"
+    subhead="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
+  />
 
   <section class="team">
     <div class="team__inner">
@@ -86,18 +53,19 @@ const members = [
       <div class="team__grid">
         {members.map((m) => (
           <div class="team__card">
+            {m.slug === "sarah" && <a href={`/team/${m.slug}`} class="team__card_link" aria-label={m.name}></a>}
             <div class="team__photowrap">
               <img src={m.photo} alt={m.name} class="team__photo" />
               <span class="team__badge">{m.role}</span>
             </div>
             <div class="team__info">
               <h3 class="team__name">{m.name}</h3>
-              <p class="team__bio">{m.bio}</p>
+              <p class="team__bio">{m.shortBio}</p>
               <div class="team__socials">
-                <a href="#" aria-label="Instagram">
+                <a href="#" aria-label="Instagram" class="team__social_link">
                   <img src={instagram.src} alt="Instagram" width="20" height="20" />
                 </a>
-                <a href="#" aria-label="Facebook">
+                <a href="#" aria-label="Facebook" class="team__social_link">
                   <img src={facebook.src} alt="Facebook" width="20" height="20" />
                 </a>
               </div>
@@ -113,58 +81,6 @@ const members = [
 
 <style>
   /* Hero */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xl);
-    padding: var(--space-3xl) var(--space-l);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color-white) 66%);
-  }
-
-  .hero__heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xs);
-  }
-
-  .hero__label {
-    margin: 0;
-    text-align: center;
-    color: var(--color-black);
-    font-family: Lato;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 147.5%;
-    letter-spacing: 2.32px;
-    text-transform: uppercase;
-  }
-
-  .hero__title {
-    margin: 0;
-    color: var(--color-black);
-    font-family: "Cabin Variable";
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 116%;
-    text-decoration: underline;
-    text-decoration-color: var(--color-yellow);
-    text-decoration-thickness: 7px;
-    text-underline-offset: 6px;
-  }
-
-  .hero__subhead {
-    max-width: 600px;
-    margin: 0;
-    text-align: center;
-    color: var(--color-text-muted);
-    font-family: Lato;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 147.5%;
-  }
-
   /* Team section */
   .team {
     padding: var(--space-3xl) 0;
@@ -224,6 +140,21 @@ const members = [
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
+    position: relative;
+  }
+
+  .team__card_link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .team__social_link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .team__photowrap {
@@ -287,12 +218,6 @@ const members = [
     display: flex;
     gap: var(--space-xs);
     align-items: center;
-  }
-
-  .team__socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .team__socials img {
