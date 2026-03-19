@@ -70,7 +70,7 @@ import Button from "../components/Button.astro";
             exceptional productivity, ensures customer satisfaction.
           </p>
         </div>
-        <Button id="team-btn" text="Meet the Team" paddingX="16px" />
+        <a href="/team"><Button id="team-btn" text="Meet the Team" paddingX="16px" /></a>
       </div>
       <div class="team__team">
         <div class="team__responsive">
@@ -488,5 +488,76 @@ import Button from "../components/Button.astro";
     font-style: normal;
     font-weight: 500;
     line-height: 116%; /* 20.88px */
+  }
+
+  /* Responsive */
+  @media (max-width: 1280px) {
+    .team__section {
+      padding: var(--space-3xl) var(--space-l);
+    }
+
+    .faq {
+      padding: var(--space-3xl) var(--space-l);
+    }
+
+    .faq__card {
+      padding: var(--space-2xl) var(--space-xl);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .counter {
+      gap: var(--space-xl);
+    }
+
+    .team__content {
+      grid-template-columns: 1fr;
+    }
+
+    .team__team {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero__title {
+      font-size: var(--step-4);
+    }
+
+    .hero__subhead {
+      font-size: var(--step-1);
+    }
+
+    .counter {
+      flex-wrap: wrap;
+      gap: var(--space-l);
+      padding: 0 var(--space-l);
+    }
+
+    .counter p {
+      padding-bottom: var(--space-m);
+    }
+
+    .team__section {
+      padding: var(--space-2xl) var(--space-l);
+    }
+
+    .team__responsive {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .faq__card {
+      padding: var(--space-xl) var(--space-l);
+    }
+
+    .faq {
+      margin-bottom: var(--space-3xl);
+    }
+
+    .faq__title {
+      font-size: var(--step-2);
+    }
   }
 </style>

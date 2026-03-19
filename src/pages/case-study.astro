@@ -233,9 +233,7 @@ import image5 from "../assets/image5.png";
     align-items: center;
     justify-content: space-between;
     padding: 28px 60px;
-    width: 1028px;
-    max-width: 90%;
-    height: 167px;
+    width: min(1028px, 90%);
     box-sizing: border-box;
     border-radius: 30px;
     position: absolute;
@@ -248,8 +246,8 @@ import image5 from "../assets/image5.png";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 550px;
-    max-width: 100%;
+    flex: 1;
+    max-width: 550px;
   }
 
   .cs_meta_item {
@@ -331,7 +329,35 @@ import image5 from "../assets/image5.png";
   }
 
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
+    .cs_image_wrap {
+      padding-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cs_image_main {
+      border-radius: 16px 16px 0 0;
+    }
+
+    .cs_image_meta {
+      position: static;
+      transform: none;
+      width: 100%;
+      border-radius: 0 0 16px 16px;
+      padding: var(--space-m) var(--space-l);
+      gap: var(--space-m);
+      justify-content: center;
+    }
+
+    .cs_meta_items_group {
+      gap: var(--space-l);
+      max-width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 600px) {
     .cs_title {
       font-size: var(--step-3);
     }
@@ -342,8 +368,20 @@ import image5 from "../assets/image5.png";
       gap: var(--space-s);
     }
 
+    .cs_meta_items_group {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+
     .cs_meta_cta {
       margin-left: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cs_title {
+      font-size: var(--step-2);
     }
   }
 </style>

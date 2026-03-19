@@ -1,0 +1,349 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import sarah from "../assets/Sarah.jpg";
+import john from "../assets/John.jpg";
+import daisy from "../assets/Daisy.jpg";
+import maya from "../assets/Maya.jpg";
+import ryan from "../assets/Ryan.png";
+import lily from "../assets/Lily.jpg";
+import instagram from "../assets/Instagram.png";
+import facebook from "../assets/Facebook.png";
+
+const members = [
+  {
+    photo: sarah.src,
+    name: "Sarah Jasmine",
+    role: "CEO at Company",
+    bio: "Driving innovation and leadership with a focus on strategic growth and impactful decisions.",
+  },
+  {
+    photo: john.src,
+    name: "John Carter",
+    role: "Manager",
+    bio: "Expert in operational efficiency, ensuring smooth processes and exceptional team performance.",
+  },
+  {
+    photo: daisy.src,
+    name: "Daisy Stella",
+    role: "Visionary",
+    bio: "Inspiring creative solutions and forward-thinking approaches for groundbreaking projects.",
+  },
+  {
+    photo: maya.src,
+    name: "Maya Elizabeth",
+    role: "Strategist",
+    bio: "Crafting tailored strategies to empower business success and maximize market potential.",
+  },
+  {
+    photo: ryan.src,
+    name: "Ryan Jackson",
+    role: "Director",
+    bio: "Leading with vision and precision to align organizational goals with long-term growth.",
+  },
+  {
+    photo: lily.src,
+    name: "Lilly Victoria",
+    role: "President",
+    bio: "Championing collaboration and excellence to drive meaningful change and success.",
+  },
+];
+---
+
+<Layout>
+  <Header />
+
+  <section class="hero">
+    <div class="hero__heading">
+      <p class="hero__label">TEAM</p>
+      <h1 class="hero__title">The Consultors</h1>
+    </div>
+    <p class="hero__subhead">
+      Our success stems from the synergy between dedicated teams and our valued
+      clients. We prioritize a company culture that fosters exceptional
+      productivity, ensures customer satisfaction.
+    </p>
+  </section>
+
+  <section class="team">
+    <div class="team__inner">
+      <div class="team__intro">
+        <div class="team__introtext">
+          <h2 class="team__title">Meet Our Great Team</h2>
+          <p class="team__body">
+            Welcome to our amazing team! We are a group of passionate
+            individuals dedicated to excellence and innovation. Each member
+            brings unique skills and experiences, working together to achieve
+            our goals. Join us as we embark on exciting projects and create
+            lasting impacts.
+          </p>
+        </div>
+        <button class="cta_btn">Join our team</button>
+      </div>
+
+      <div class="team__grid">
+        {members.map((m) => (
+          <div class="team__card">
+            <div class="team__photowrap">
+              <img src={m.photo} alt={m.name} class="team__photo" />
+              <span class="team__badge">{m.role}</span>
+            </div>
+            <div class="team__info">
+              <h3 class="team__name">{m.name}</h3>
+              <p class="team__bio">{m.bio}</p>
+              <div class="team__socials">
+                <a href="#" aria-label="Instagram">
+                  <img src={instagram.src} alt="Instagram" width="20" height="20" />
+                </a>
+                <a href="#" aria-label="Facebook">
+                  <img src={facebook.src} alt="Facebook" width="20" height="20" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-3xl) var(--space-l);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color-white) 66%);
+  }
+
+  .hero__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .hero__label {
+    margin: 0;
+    text-align: center;
+    color: var(--color-black);
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 147.5%;
+    letter-spacing: 2.32px;
+    text-transform: uppercase;
+  }
+
+  .hero__title {
+    margin: 0;
+    color: var(--color-black);
+    font-family: "Cabin Variable";
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 116%;
+    text-decoration: underline;
+    text-decoration-color: var(--color-yellow);
+    text-decoration-thickness: 7px;
+    text-underline-offset: 6px;
+  }
+
+  .hero__subhead {
+    max-width: 600px;
+    margin: 0;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 147.5%;
+  }
+
+  /* Team section */
+  .team {
+    padding: var(--space-3xl) 0;
+    background: var(--color-white);
+  }
+
+  .team__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  /* Intro row */
+  .team__intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-l);
+  }
+
+  .team__introtext {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    max-width: 560px;
+  }
+
+  .team__title {
+    margin: 0;
+    font-family: "Cabin Variable";
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+  }
+
+  .team__body {
+    margin: 0;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 148%;
+    color: var(--color-text-muted);
+  }
+
+  /* Grid */
+  .team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-m);
+  }
+
+  /* Card */
+  .team__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+
+  .team__photowrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .team__photo {
+    width: 100%;
+    height: 392px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .team__badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-family: Lato;
+    font-size: 13px;
+    font-weight: 400;
+    height: 34px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+  }
+
+  .team__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+    align-items: center;
+  }
+
+  .team__name {
+    margin: 0;
+    font-family: "Cabin Variable";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 116%;
+    color: var(--color-black);
+  }
+
+  .team__bio {
+    margin: 0;
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-text-muted);
+    max-width: 280px;
+  }
+
+  .team__socials {
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+  }
+
+  .team__socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team__socials img {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .team__socials a:hover img {
+    opacity: 1;
+  }
+
+  /* CTA button */
+  .cta_btn {
+    width: 168px;
+    height: 59px;
+    border-radius: 42px;
+    border: none;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-family: Lato;
+    font-size: var(--step-0);
+    font-weight: 400;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1280px) {
+    .team__inner {
+      padding: 0 var(--space-l);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .team__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero__title {
+      font-size: var(--step-4);
+    }
+
+    .team__intro {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .team__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
