@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
+import PageHero from "../components/PageHero.astro";
 import image4 from "../assets/image4.png";
 import image5 from "../assets/image5.png";
 ---
@@ -11,17 +12,11 @@ import image5 from "../assets/image5.png";
 <Layout>
   <Header />
 
-  <section class="cs_hero">
-    <div class="cs_hero_inner">
-      <p class="cs_eyebrow">CASE STUDIES</p>
-      <h1 class="cs_title">Taxes &amp; Efficiency</h1>
-      <p class="cs_subtitle">
-        Our achievements reflect the close collaboration between our expert
-        teams and our esteemed clientele. We cultivate a workplace that
-        champions peak performance and guarantees client satisfaction.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    label="CASE STUDIES"
+    title="Taxes & Efficiency"
+    subhead="Our achievements reflect the close collaboration between our expert teams and our esteemed clientele. We cultivate a workplace that champions peak performance and guarantees client satisfaction."
+  />
 
   <article class="cs_article flow">
     <div class="cs_article_inner">
@@ -132,57 +127,6 @@ import image5 from "../assets/image5.png";
 </Layout>
 
 <style>
-  /* Hero */
-  .cs_hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--space-3xl) var(--space-l) var(--space-2xl);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f9fafb 66%);
-  }
-
-  .cs_hero_inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-s);
-    max-width: 700px;
-    text-align: center;
-  }
-
-  .cs_eyebrow {
-    font-family: "Lato";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 147.5%;
-    letter-spacing: 2.32px;
-    text-transform: uppercase;
-    color: var(--color-black);
-    margin: 0;
-  }
-
-  .cs_title {
-    font-family: "Cabin Variable";
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 116%;
-    color: var(--color-black);
-    margin: 0;
-    text-decoration: underline;
-    text-decoration-color: var(--color-yellow);
-    text-decoration-thickness: 7px;
-    text-underline-offset: 6px;
-  }
-
-  .cs_subtitle {
-    font-family: "Lato";
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 147.5%;
-    color: var(--color-text-muted);
-    margin: 0;
-  }
-
   /* Artikel */
   .cs_article {
     --flow-space: var(--space-2xl);
@@ -358,10 +302,6 @@ import image5 from "../assets/image5.png";
   }
 
   @media (max-width: 600px) {
-    .cs_title {
-      font-size: var(--step-3);
-    }
-
     .cs_image_meta {
       flex-direction: column;
       align-items: flex-start;
@@ -379,9 +319,4 @@ import image5 from "../assets/image5.png";
     }
   }
 
-  @media (max-width: 480px) {
-    .cs_title {
-      font-size: var(--step-2);
-    }
-  }
 </style>
