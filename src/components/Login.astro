@@ -24,15 +24,3 @@ import Button from "./Button.astro";
 
 <!-- Styles i src/styles/global.css -->
 
-<script>
-  const btn = document.getElementById("login-btn")!;
-  const popover = document.getElementById("login-popover")!;
-
-  popover.addEventListener("toggle", (e) => {
-    if ((e as ToggleEvent).newState === "open") {
-      const rect = btn.getBoundingClientRect();
-      popover.style.top = `${rect.bottom + 8}px`;
-      popover.style.left = `${rect.right - popover.offsetWidth}px`;
-    }
-  });
-</script>
