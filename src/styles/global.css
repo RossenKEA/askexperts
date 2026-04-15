@@ -1,3 +1,8 @@
+/* anchor name - global så det ikke bliver scoped af Astro */
+#login-btn {
+  anchor-name: --login-anchor;
+}
+
 /* Login */
 #login-popover {
   background: var(--color-white, #f9fafb);
@@ -7,9 +12,10 @@
   width: 280px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 
+  /* fallback */
   position: fixed;
-  top: 80px;
-  right: 40px;
+  top: 72px;
+  right: var(--space-l, 2rem);
   bottom: auto;
   left: auto;
   margin: 0;
@@ -23,11 +29,13 @@
     overlay 0.2s ease allow-discrete;
 }
 
+/* anchor positioning - CSS only */
 @supports (anchor-name: --x) {
   #login-popover {
+    position: fixed;
     position-anchor: --login-anchor;
     top: calc(anchor(bottom) + 8px);
-    right: calc(100% - anchor(right));
+    right: anchor(right);
   }
 }
 
