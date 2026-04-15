@@ -9,9 +9,9 @@ import Button from "./Button.astro";
         Empowering Your<br />Business Growth
       </h1>
       <p class="hero_subtitle">
-        Discover tailored strategies and expert insights to take your
-        business to the next level. Let us help you navigate challenges
-        and achieve sustainable success.
+        Discover tailored strategies and expert insights to take your business
+        to the next level. Let us help you navigate challenges and achieve
+        sustainable success.
       </p>
       <div id="hero_buttons">
         <Button
@@ -41,9 +41,19 @@ import Button from "./Button.astro";
     background-image:
       url("/banner.png"),
       repeating-linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: auto 100%, 44px 44px, 44px 44px;
-    background-position: right -180px top 0px, 0 0, 0 0;
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      );
+    background-size:
+      auto 100%,
+      44px 44px,
+      44px 44px;
+    background-position:
+      right -180px top 0px,
+      0 0,
+      0 0;
     background-repeat: no-repeat, repeat, repeat;
     position: relative;
   }
@@ -60,8 +70,11 @@ import Button from "./Button.astro";
   #hero_content {
     display: flex;
     flex-direction: column;
-    gap: var(--space-m);
     max-width: 520px;
+    --flow-space: var(--space-m);
+  }
+  #hero_content > * + * {
+    margin-top: var(--flow-space);
   }
 
   .hero_heading {

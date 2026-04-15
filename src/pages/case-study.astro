@@ -20,7 +20,6 @@ import image5 from "../assets/image5.png";
 
   <article class="cs_article flow">
     <div class="cs_article_inner">
-
       <div class="cs_image_wrap">
         <img
           src={image4.src}
@@ -64,14 +63,25 @@ import image5 from "../assets/image5.png";
           thoroughly, we minimized wasted energy and promoted transparent
           communication. These changes empower the workforce to address key
           goals efficiently while boosting productivity. Advanced resources
-          drive sustained innovation. Frequent reviews keep teams aligned
-          with strategic objectives.
+          drive sustained innovation. Frequent reviews keep teams aligned with
+          strategic objectives.
         </p>
         <ul class="cs_list">
-          <li>It brings the right people together with all the right information and tools to get work done</li>
-          <li>We provide operational efficiency, data security, and flexible scale</li>
-          <li>Your best work, together in one package that works seamlessly from your computer</li>
-          <li>Delivers the tools you need to save time improve field performance always</li>
+          <li>
+            It brings the right people together with all the right information
+            and tools to get work done
+          </li>
+          <li>
+            We provide operational efficiency, data security, and flexible scale
+          </li>
+          <li>
+            Your best work, together in one package that works seamlessly from
+            your computer
+          </li>
+          <li>
+            Delivers the tools you need to save time improve field performance
+            always
+          </li>
         </ul>
       </section>
 
@@ -118,7 +128,6 @@ import image5 from "../assets/image5.png";
           have multiple touchpoints for offshoring.
         </p>
       </section>
-
     </div>
   </article>
 
@@ -133,7 +142,6 @@ import image5 from "../assets/image5.png";
     margin: 0 auto;
     padding: 0 var(--space-l) var(--space-3xl);
   }
-
   .flow > * + * {
     margin-top: var(--flow-space, var(--space-m));
   }
@@ -141,9 +149,12 @@ import image5 from "../assets/image5.png";
   .cs_article_inner {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2xl);
     max-width: 1200px;
     margin: 0 auto;
+    --flow-space: var(--space-2xl);
+  }
+  .cs_article_inner > * + * {
+    margin-top: var(--flow-space);
   }
 
   /* Sektioner og inline-billede centreres til 709px */
@@ -197,7 +208,10 @@ import image5 from "../assets/image5.png";
   .cs_meta_item {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3xs);
+    --flow-space: var(--space-3xs);
+  }
+  .cs_meta_item > * + * {
+    margin-top: var(--flow-space);
   }
 
   .cs_meta_label {
@@ -224,9 +238,11 @@ import image5 from "../assets/image5.png";
   .cs_section {
     display: flex;
     flex-direction: column;
-    gap: var(--space-m);
+    --flow-space: var(--space-m);
   }
-
+  .cs_section > * + * {
+    margin-top: var(--flow-space);
+  }
 
   .cs_h2 {
     font-family: "Cabin Variable";
@@ -252,7 +268,10 @@ import image5 from "../assets/image5.png";
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    --flow-space: var(--space-xs);
+  }
+  .cs_list > * + * {
+    margin-top: var(--flow-space);
   }
 
   .cs_list li {
@@ -318,5 +337,4 @@ import image5 from "../assets/image5.png";
       margin-left: 0;
     }
   }
-
 </style>

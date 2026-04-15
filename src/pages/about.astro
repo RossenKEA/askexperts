@@ -64,7 +64,9 @@ import PageHero from "../components/PageHero.astro";
             exceptional productivity, ensures customer satisfaction.
           </p>
         </div>
-        <a href="/team"><Button id="team-btn" text="Meet the Team" paddingX="16px" /></a>
+        <a href="/team"
+          ><Button id="team-btn" text="Meet the Team" paddingX="16px" /></a
+        >
       </div>
       <div class="team__team">
         <div class="team__responsive">
@@ -199,11 +201,14 @@ import PageHero from "../components/PageHero.astro";
 
   .faq__header {
     text-align: center;
-    margin-bottom: 36px;
+    --flow-space: var(--space-xs);
+  }
+  .faq__header > * + * {
+    margin: var(--flow-space);
   }
 
   .faq__eyebrow {
-    margin: 0 0 10px;
+    margin: 0;
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.18em;
@@ -274,7 +279,6 @@ import PageHero from "../components/PageHero.astro";
     padding: 100px 360px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
   }
 
   .team__content {
@@ -288,10 +292,13 @@ import PageHero from "../components/PageHero.astro";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 22px;
     align-self: stretch;
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
+    --flow-space: var(--space-m);
+  }
+  .team__textcontent > * + * {
+    margin-top: var(--flow-space);
   }
 
   .team__subtext {
@@ -314,9 +321,14 @@ import PageHero from "../components/PageHero.astro";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 11px;
     align-self: stretch;
+    --flow-space: var(--space-xs);
   }
+
+  .team__text > * + * {
+    margin-top: var(--flow-space);
+  }
+
   .team__text h1 {
     font-family: Cabin Variable;
     font-size: 45px;
@@ -341,11 +353,17 @@ import PageHero from "../components/PageHero.astro";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 48px;
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
     justify-self: stretch;
   }
+  .team__team {
+    --flow-space: var(--space-xl);
+  }
+  .team__team > * + * {
+    margin-top: var(--flow-space);
+  }
+
   .team__responsive {
     display: flex;
     justify-content: center;
@@ -362,16 +380,25 @@ import PageHero from "../components/PageHero.astro";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 27px;
     flex: 1 0 0;
+    --flow-space: var(--space-l);
   }
+
+  .team__responsivetext > * + * {
+    margin-top: var(--flow-space);
+  }
+
   .team__responsivetext div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 13px;
     align-self: stretch;
+    --flow-space: var(--space-xs);
   }
+  .team__responsivetext div > * + * {
+    margin-top: var(--flow-space);
+  }
+
   .team__responsivetext h2 {
     text-align: center;
     font-family: Cabin Variable;
@@ -416,8 +443,11 @@ import PageHero from "../components/PageHero.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
     flex-shrink: 0;
+    --flow-space: var(--space-xs);
+  }
+  .counter__text > * + * {
+    margin-top: var(--flow-space);
   }
 
   .counter h1 {

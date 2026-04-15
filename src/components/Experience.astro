@@ -1,9 +1,9 @@
 ---
+
 ---
 
 <section id="experience">
   <div id="exp_inner">
-
     <div id="exp_text">
       <p class="exp_eyebrow">EXPERIENCE</p>
       <h2 class="exp_heading">More than 25 years<br />of experience</h2>
@@ -11,18 +11,27 @@
     </div>
 
     <div id="exp_stats">
-
       <div class="exp_stat">
         <div class="exp_ring_wrap">
           <svg viewBox="0 0 120 120" class="exp_ring" aria-hidden="true">
-            <circle cx="60" cy="60" r="50" fill="none"
-              stroke="rgba(0,0,0,0.15)" stroke-width="4"/>
-            <circle cx="60" cy="60" r="50" fill="none"
-              stroke="white" stroke-width="4"
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              fill="none"
+              stroke="rgba(0,0,0,0.15)"
+              stroke-width="4"></circle>
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
               stroke-dasharray="267 314"
               stroke-linecap="round"
-              transform="rotate(-90 60 60)"/>
-            <circle cx="20" cy="31" r="5" fill="var(--color-black)"/>
+              transform="rotate(-90 60 60)"></circle>
+            <circle cx="20" cy="31" r="5" fill="var(--color-black)"></circle>
           </svg>
           <span class="exp_pct">85%</span>
         </div>
@@ -32,14 +41,24 @@
       <div class="exp_stat">
         <div class="exp_ring_wrap">
           <svg viewBox="0 0 120 120" class="exp_ring" aria-hidden="true">
-            <circle cx="60" cy="60" r="50" fill="none"
-              stroke="rgba(0,0,0,0.15)" stroke-width="4"/>
-            <circle cx="60" cy="60" r="50" fill="none"
-              stroke="white" stroke-width="4"
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              fill="none"
+              stroke="rgba(0,0,0,0.15)"
+              stroke-width="4"></circle>
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
               stroke-dasharray="298 314"
               stroke-linecap="round"
-              transform="rotate(-90 60 60)"/>
-            <circle cx="44" cy="13" r="5" fill="var(--color-black)"/>
+              transform="rotate(-90 60 60)"></circle>
+            <circle cx="44" cy="13" r="5" fill="var(--color-black)"></circle>
           </svg>
           <span class="exp_pct">95%</span>
         </div>
@@ -49,20 +68,29 @@
       <div class="exp_stat">
         <div class="exp_ring_wrap">
           <svg viewBox="0 0 120 120" class="exp_ring" aria-hidden="true">
-            <circle cx="60" cy="60" r="50" fill="none"
-              stroke="rgba(0,0,0,0.15)" stroke-width="4"/>
-            <circle cx="60" cy="60" r="50" fill="none"
-              stroke="white" stroke-width="4"
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              fill="none"
+              stroke="rgba(0,0,0,0.15)"
+              stroke-width="4"></circle>
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
               stroke-dasharray="283 314"
               stroke-linecap="round"
-              transform="rotate(-90 60 60)"/>
-            <circle cx="31" cy="19" r="5" fill="var(--color-black)"/>
+              transform="rotate(-90 60 60)"></circle>
+            <circle cx="31" cy="19" r="5" fill="var(--color-black)"></circle>
           </svg>
           <span class="exp_pct">90%</span>
         </div>
         <p class="exp_label">Branching</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -87,8 +115,11 @@
   #exp_text {
     display: flex;
     flex-direction: column;
-    gap: var(--space-s);
     max-width: 460px;
+    --flow-space: var(--space-s);
+  }
+  #exp_text > * + * {
+    margin-top: var(--flow-space);
   }
 
   .exp_eyebrow {
@@ -125,14 +156,16 @@
     display: flex;
     justify-content: space-between;
     gap: var(--space-l);
-    margin-top: var(--space-xl);
   }
 
   .exp_stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-xs);
+    --flow-space: var(--space-xs);
+  }
+  .exp_stat > * + * {
+    margin-top: var(--flow-space);
   }
 
   /* Ring */

@@ -23,7 +23,6 @@ const { member } = Astro.props;
 
   <section class="profile">
     <div class="profile__inner">
-
       <!-- Venstre -->
       <div class="profile__left">
         <div class="profile__photowrap">
@@ -55,7 +54,6 @@ const { member } = Astro.props;
           <p class="profile__exp_body">{member.experience}</p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -84,7 +82,10 @@ const { member } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-m);
+    --flow-space: var(--space-m);
+  }
+  .profile__left > * + * {
+    margin-top: var(--flow-space);
   }
 
   .profile__photowrap {
@@ -139,14 +140,20 @@ const { member } = Astro.props;
   .profile__right {
     display: flex;
     flex-direction: column;
-    gap: var(--space-l);
     padding-top: var(--space-xl);
+    --flow-space: var(--space-l);
+  }
+  .profile__right > * + * {
+    margin-top: var(--flow-space);
   }
 
   .profile__intro {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    --flow-space: var(--space-xs);
+  }
+  .profile__intro > * + * {
+    margin-top: var(--flow-space);
   }
 
   .profile__name {
@@ -186,7 +193,10 @@ const { member } = Astro.props;
   .profile__experience {
     display: flex;
     flex-direction: column;
-    gap: var(--space-s);
+    --flow-space: var(--space-s);
+  }
+  .profile__experience > * + * {
+    margin-top: var(--flow-space);
   }
 
   .profile__exp_title {

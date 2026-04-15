@@ -9,7 +9,6 @@ import image3 from "../assets/image3.png";
 
 <section id="contact">
   <div id="contact_inner">
-
     <div id="contact_content" class="flow">
       <p class="contact_eyebrow">PROCESS</p>
       <h2 class="contact_heading">Contact Us. It's Easy.</h2>
@@ -22,7 +21,14 @@ import image3 from "../assets/image3.png";
       <ul id="contact_list">
         <li class="contact_item">
           <div class="contact_icon_wrap contact_icon_wrap--yellow">
-            <img src={phone.src} alt="" aria-hidden="true" class="contact_icon" width="24" height="24" />
+            <img
+              src={phone.src}
+              alt=""
+              aria-hidden="true"
+              class="contact_icon"
+              width="24"
+              height="24"
+            />
           </div>
           <div class="contact_item_text">
             <span class="contact_item_label">Call Today</span>
@@ -32,7 +38,14 @@ import image3 from "../assets/image3.png";
 
         <li class="contact_item">
           <div class="contact_icon_wrap contact_icon_wrap--green">
-            <img src={time.src} alt="" aria-hidden="true" class="contact_icon" width="24" height="24" />
+            <img
+              src={time.src}
+              alt=""
+              aria-hidden="true"
+              class="contact_icon"
+              width="24"
+              height="24"
+            />
           </div>
           <div class="contact_item_text">
             <span class="contact_item_label">Monday To Friday</span>
@@ -42,11 +55,20 @@ import image3 from "../assets/image3.png";
 
         <li class="contact_item">
           <div class="contact_icon_wrap contact_icon_wrap--gray">
-            <img src={location.src} alt="" aria-hidden="true" class="contact_icon" width="24" height="24" />
+            <img
+              src={location.src}
+              alt=""
+              aria-hidden="true"
+              class="contact_icon"
+              width="24"
+              height="24"
+            />
           </div>
           <div class="contact_item_text">
             <span class="contact_item_label">USA Office</span>
-            <span class="contact_item_value">195 Devonshire St Boston, MA 02110</span>
+            <span class="contact_item_value"
+              >195 Devonshire St Boston, MA 02110</span
+            >
           </div>
         </li>
       </ul>
@@ -78,7 +100,6 @@ import image3 from "../assets/image3.png";
         />
       </div>
     </div>
-
   </div>
 </section>
 
@@ -99,7 +120,7 @@ import image3 from "../assets/image3.png";
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    column-gap: var(--space-2xl);
     align-items: center;
   }
 
@@ -144,7 +165,10 @@ import image3 from "../assets/image3.png";
     margin: var(--space-l) 0 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-m);
+    --flow-space: var(--space-m);
+  }
+  #contact_list > * + * {
+    margin-top: var(--flow-space);
   }
 
   .contact_item {

@@ -45,10 +45,9 @@ const cards = [
 ---
 
 <section id="cv" style={`background:${dark ? "#030712" : "#F9FAFB"}`}>
-  <div id="cv_inner">
-
+  <div id="cv_inner" class="flow">
     <div id="cv_header">
-      <div id="cv_text">
+      <div id="cv_text" class="flow">
         <p class="cv_eyebrow">{eyebrow}</p>
         <h2 class="cv_heading">{heading}</h2>
         <p class="cv_body">{body}</p>
@@ -57,18 +56,21 @@ const cards = [
     </div>
 
     <div id="cv_cards">
-      {cards.map((card) => (
-        <div class="cv_card">
-          <div class="cv_icon">
-            <img src={card.icon} alt="" aria-hidden="true" />
+      {
+        cards.map((card) => (
+          <div class="cv_card flow">
+            <div class="cv_icon">
+              <img src={card.icon} alt="" aria-hidden="true" />
+            </div>
+            <h3 class="cv_card_title">{card.title}</h3>
+            <p class="cv_card_body">{card.body}</p>
+            <a href="#" class="cv_card_link">
+              Read More →
+            </a>
           </div>
-          <h3 class="cv_card_title">{card.title}</h3>
-          <p class="cv_card_body">{card.body}</p>
-          <a href="#" class="cv_card_link">Read More →</a>
-        </div>
-      ))}
+        ))
+      }
     </div>
-
   </div>
 </section>
 
@@ -84,7 +86,10 @@ const cards = [
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    --flow-space: var(--space-xl);
+  }
+  #cv_inner > * + * {
+    margin-top: var(--flow-space);
   }
 
   /* Header */
@@ -98,8 +103,11 @@ const cards = [
   #cv_text {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
     max-width: 560px;
+    --flow-space: var(--space-xs);
+  }
+  #cv_text > * + * {
+    margin-top: var(--flow-space);
   }
 
   .cv_eyebrow {
@@ -113,7 +121,9 @@ const cards = [
     margin: 0;
   }
 
-  #cv[style*="030712"] .cv_eyebrow { color: var(--color-muted); }
+  #cv[style*="030712"] .cv_eyebrow {
+    color: var(--color-muted);
+  }
 
   .cv_heading {
     font-family: "Cabin Variable";
@@ -124,7 +134,9 @@ const cards = [
     margin: 0;
   }
 
-  #cv[style*="030712"] .cv_heading { color: var(--color-white); }
+  #cv[style*="030712"] .cv_heading {
+    color: var(--color-white);
+  }
 
   .cv_body {
     font-family: "Lato";
@@ -135,7 +147,9 @@ const cards = [
     margin: 0;
   }
 
-  #cv[style*="030712"] .cv_body { color: var(--color-muted); }
+  #cv[style*="030712"] .cv_body {
+    color: var(--color-muted);
+  }
 
   /* Button */
   .cv_btn {
@@ -176,8 +190,17 @@ const cards = [
   }
 
   /* Alternating sizes */
-  .cv_card:nth-child(odd)  { gap: 10px; height: 392px; }
-  .cv_card:nth-child(even) { gap: 15px; height: 363px; }
+  .cv_card:nth-child(odd) {
+    --flow-space: var(--space-2xs);
+    height: 392px;
+  }
+  .cv_card:nth-child(even) {
+    --flow-space: var(--space-xs);
+    height: 363px;
+  }
+  .cv_card > * + * {
+    margin-top: var(--flow-space);
+  }
 
   /* Icon */
   .cv_icon {

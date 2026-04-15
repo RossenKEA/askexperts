@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section id="cards">
@@ -6,17 +7,26 @@
     <ul id="cards_grid">
       <li class="card">
         <h3 class="card_title">Finance & Restructuring</h3>
-        <p class="card_body">Unlock financial clarity and implement effective restructuring strategies.</p>
+        <p class="card_body">
+          Unlock financial clarity and implement effective restructuring
+          strategies.
+        </p>
         <a href="#" class="card_link">Explore Finance →</a>
       </li>
       <li class="card">
         <h3 class="card_title">Our Approach</h3>
-        <p class="card_body">Explore our proven methods for achieving growth and building resilience through customized solutions.</p>
+        <p class="card_body">
+          Explore our proven methods for achieving growth and building
+          resilience through customized solutions.
+        </p>
         <a href="#" class="card_link">Explore Approach →</a>
       </li>
       <li class="card">
         <h3 class="card_title">Consultalk Result</h3>
-        <p class="card_body">Experience actionable insights and measurable results through expert consultation and tailored guidance.</p>
+        <p class="card_body">
+          Experience actionable insights and measurable results through expert
+          consultation and tailored guidance.
+        </p>
         <a href="#" class="card_link">Explore Consultalk →</a>
       </li>
     </ul>
@@ -122,8 +132,11 @@
       grid-row: span 1;
       display: flex;
       flex-direction: column;
-      gap: var(--space-s);
+      --flow-space: var(--space-s);
       height: auto;
+    }
+    .card > * + * {
+      margin-top: var(--flow-space);
     }
   }
 </style>

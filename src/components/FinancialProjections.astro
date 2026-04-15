@@ -7,26 +7,35 @@ import icon4 from "../assets/icon4.png";
 
 <section id="proj">
   <div id="proj_inner">
-
     <div id="proj_header">
       <div id="proj_text">
         <p class="proj_eyebrow">FINANCIAL TOOLS</p>
         <h2 class="proj_heading">Financial Projections</h2>
         <p class="proj_body">
-          Financial projections are essential for planning and monitoring a company's
-          performance. They provide insights into potential revenue, expenses, and
-          profitability over specific periods.
+          Financial projections are essential for planning and monitoring a
+          company's performance. They provide insights into potential revenue,
+          expenses, and profitability over specific periods.
         </p>
       </div>
       <div id="proj_controls">
         <button id="proj_prev" aria-label="Previous slide">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M15 18l-6-6 6-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </button>
         <button id="proj_next" aria-label="Next slide">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M9 18l6-6-6-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </button>
       </div>
@@ -36,35 +45,48 @@ import icon4 from "../assets/icon4.png";
       <div class="proj_card">
         <img src={icon1.src} alt="" class="proj_icon" aria-hidden="true" />
         <h3 class="proj_card_title">The Balance Sheet</h3>
-        <p class="proj_card_body">The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time.</p>
+        <p class="proj_card_body">
+          The Balance Sheet is a summary of the assets and liabilities and
+          equity of a business at a specific point of time.
+        </p>
       </div>
 
       <div class="proj_card">
         <img src={icon2.src} alt="" class="proj_icon" aria-hidden="true" />
         <h3 class="proj_card_title">Income Statement</h3>
-        <p class="proj_card_body">The Income (Profit and Loss) Statement, commonly referred to as the P&L statement, summarizes the revenue and expenses for a specific time period.</p>
+        <p class="proj_card_body">
+          The Income (Profit and Loss) Statement, commonly referred to as the
+          P&L statement, summarizes the revenue and expenses for a specific time
+          period.
+        </p>
       </div>
 
       <div class="proj_card">
         <img src={icon3.src} alt="" class="proj_icon" aria-hidden="true" />
         <h3 class="proj_card_title">Financial Plan</h3>
-        <p class="proj_card_body">Keep your information current and review the documents on a regular basis. Review them with key individuals within your company.</p>
+        <p class="proj_card_body">
+          Keep your information current and review the documents on a regular
+          basis. Review them with key individuals within your company.
+        </p>
       </div>
 
       <div class="proj_card">
         <img src={icon4.src} alt="" class="proj_icon" aria-hidden="true" />
         <h3 class="proj_card_title">Financial Ratios</h3>
-        <p class="proj_card_body">Ratios are useful when comparing your company with the competition on financial performance and also when benchmarking the performance of your company.</p>
+        <p class="proj_card_body">
+          Ratios are useful when comparing your company with the competition on
+          financial performance and also when benchmarking the performance of
+          your company.
+        </p>
       </div>
     </div>
-
   </div>
 </section>
 
 <script>
   const track = document.getElementById("proj_track") as HTMLElement;
-  const prev  = document.getElementById("proj_prev")  as HTMLButtonElement;
-  const next  = document.getElementById("proj_next")  as HTMLButtonElement;
+  const prev = document.getElementById("proj_prev") as HTMLButtonElement;
+  const next = document.getElementById("proj_next") as HTMLButtonElement;
 
   /* prefers-reduced-motion */
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -72,15 +94,15 @@ import icon4 from "../assets/icon4.png";
 
   function getCardWidth(): number {
     const card = track.querySelector(".proj_card") as HTMLElement;
-    const gap  = parseInt(getComputedStyle(track).gap) || 24;
+    const gap = parseInt(getComputedStyle(track).gap) || 24;
     return card.offsetWidth + gap;
   }
 
   prev.addEventListener("click", () =>
-    track.scrollBy({ left: -getCardWidth(), behavior })
+    track.scrollBy({ left: -getCardWidth(), behavior }),
   );
   next.addEventListener("click", () =>
-    track.scrollBy({ left: getCardWidth(), behavior })
+    track.scrollBy({ left: getCardWidth(), behavior }),
   );
 </script>
 
@@ -97,7 +119,10 @@ import icon4 from "../assets/icon4.png";
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    --flow-space: var(--space-xl);
+  }
+  #proj_inner > * + * {
+    margin-top: var(--flow-space);
   }
 
   /* Header */
@@ -111,8 +136,11 @@ import icon4 from "../assets/icon4.png";
   #proj_text {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
     max-width: 560px;
+    --flow-space: var(--space-xs);
+  }
+  #proj_text > * + * {
+    margin-top: var(--flow-space);
   }
 
   .proj_eyebrow {
@@ -202,7 +230,10 @@ import icon4 from "../assets/icon4.png";
     padding: 45px 33px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    --flow-space: var(--space-2xs);
+  }
+  .proj_card > * + * {
+    margin-top: var(--flow-space);
   }
 
   .proj_icon {

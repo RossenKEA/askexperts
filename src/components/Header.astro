@@ -118,7 +118,7 @@ import Login from "./Login.astro";
     display: none;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: var(--space-3xs);
     background: none;
     border: none;
     cursor: pointer;
@@ -131,7 +131,9 @@ import Login from "./Login.astro";
     height: 2px;
     background: var(--color-white);
     border-radius: 2px;
-    transition: transform 0.25s, opacity 0.25s;
+    transition:
+      transform 0.25s,
+      opacity 0.25s;
   }
 
   #burger.active span:nth-child(1) {
@@ -164,7 +166,10 @@ import Login from "./Login.astro";
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-s);
+    --flow-space: var(--space-s);
+  }
+  #mobile_menu ul > * + * {
+    margin-top: var(--flow-space);
   }
 
   #mobile_menu li {

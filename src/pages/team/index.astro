@@ -22,7 +22,10 @@ const photos = {
   lilly: lily.src,
 };
 
-const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typeof photos] }));
+const members = memberData.map((m) => ({
+  ...m,
+  photo: photos[m.slug as keyof typeof photos],
+}));
 ---
 
 <Layout>
@@ -51,27 +54,45 @@ const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typ
       </div>
 
       <div class="team__grid">
-        {members.map((m) => (
-          <div class="team__card">
-            {m.slug === "sarah" && <a href={`/team/${m.slug}`} class="team__card_link" aria-label={m.name}></a>}
-            <div class="team__photowrap">
-              <img src={m.photo} alt={m.name} class="team__photo" />
-              <span class="team__badge">{m.role}</span>
-            </div>
-            <div class="team__info">
-              <h3 class="team__name">{m.name}</h3>
-              <p class="team__bio">{m.shortBio}</p>
-              <div class="team__socials">
-                <a href="#" aria-label="Instagram" class="team__social_link">
-                  <img src={instagram.src} alt="Instagram" width="20" height="20" />
-                </a>
-                <a href="#" aria-label="Facebook" class="team__social_link">
-                  <img src={facebook.src} alt="Facebook" width="20" height="20" />
-                </a>
+        {
+          members.map((m) => (
+            <div class="team__card">
+              {m.slug === "sarah" && (
+                <a
+                  href={`/team/${m.slug}`}
+                  class="team__card_link"
+                  aria-label={m.name}
+                />
+              )}
+              <div class="team__photowrap">
+                <img src={m.photo} alt={m.name} class="team__photo" />
+                <span class="team__badge">{m.role}</span>
+              </div>
+              <div class="team__info">
+                <h3 class="team__name">{m.name}</h3>
+                <p class="team__bio">{m.shortBio}</p>
+                <div class="team__socials">
+                  <a href="#" aria-label="Instagram" class="team__social_link">
+                    <img
+                      src={instagram.src}
+                      alt="Instagram"
+                      width="20"
+                      height="20"
+                    />
+                  </a>
+                  <a href="#" aria-label="Facebook" class="team__social_link">
+                    <img
+                      src={facebook.src}
+                      alt="Facebook"
+                      width="20"
+                      height="20"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -92,7 +113,10 @@ const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typ
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    --flow-space: var(--space-xl);
+  }
+  .team__inner > * + * {
+    margin-top: var(--flow-space);
   }
 
   /* Intro row */
@@ -106,8 +130,11 @@ const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typ
   .team__introtext {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
     max-width: 560px;
+    --flow-space: var(--space-xs);
+  }
+  .team__introtext > * + * {
+    margin-top: var(--flow-space);
   }
 
   .team__title {
@@ -139,8 +166,11 @@ const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typ
   .team__card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-s);
     position: relative;
+    --flow-space: var(--space-s);
+  }
+  .team__card > * + * {
+    margin-top: var(--flow-space);
   }
 
   .team__card_link {
@@ -190,9 +220,12 @@ const members = memberData.map((m) => ({ ...m, photo: photos[m.slug as keyof typ
   .team__info {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
     text-align: center;
     align-items: center;
+    --flow-space: var(--space-xs);
+  }
+  .team__info > * + * {
+    margin-top: var(--flow-space);
   }
 
   .team__name {
