@@ -40,6 +40,7 @@
     position: relative;
     z-index: 1;
     padding-bottom: var(--space-xl);
+    container-type: inline-size;
   }
 
   #cards_inner {
@@ -118,11 +119,7 @@
     }
   }
 
-  @media (max-width: 768px) {
-    #cards {
-      margin-top: calc(-1 * var(--space-xl));
-    }
-
+  @container (max-width: 768px) {
     #cards_grid {
       grid-template-columns: 1fr;
       grid-template-rows: none;
