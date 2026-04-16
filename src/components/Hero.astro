@@ -36,8 +36,11 @@ import Button from "./Button.astro";
 
 <style>
   #hero {
-    width: 100%;
+    grid-column: full;
     min-height: 520px;
+    background-color: var(--color-black);
+    display: grid;
+    grid-template-columns: subgrid;
     background-image:
       url("/banner.png"),
       repeating-linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -59,8 +62,7 @@ import Button from "./Button.astro";
   }
 
   #hero_inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-column: content;
     min-height: 520px;
     display: flex;
     align-items: flex-start;
@@ -118,10 +120,6 @@ import Button from "./Button.astro";
   @media (max-width: 768px) {
     #hero {
       background-position: center center;
-    }
-
-    #hero_inner {
-      padding: var(--space-xl) var(--space-l);
     }
 
     #hero_content {

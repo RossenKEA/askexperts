@@ -110,14 +110,15 @@ import image3 from "../assets/image3.png";
   }
 
   #contact {
-    width: 100%;
+    grid-column: full;
     background: var(--color-white);
     padding: var(--space-3xl) 0;
+    display: grid;
+    grid-template-columns: subgrid;
   }
 
   #contact_inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-column: content;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: var(--space-2xl);
@@ -284,14 +285,6 @@ import image3 from "../assets/image3.png";
     aspect-ratio: 4 / 3;
   }
 
-  /* Responsive */
-  @media (max-width: 1280px) {
-    #contact_inner {
-      padding: 0 var(--space-l);
-    }
-  }
-
-  /* Container Query ikke nødvendig her */
   @media (max-width: 768px) {
     #contact_inner {
       grid-template-columns: 1fr;

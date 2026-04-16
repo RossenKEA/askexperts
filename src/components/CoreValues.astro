@@ -76,15 +76,16 @@ const cards = [
 
 <style>
   #cv {
+    grid-column: full;
     background: #030712;
-    width: 100%;
     padding: var(--space-3xl) 0;
-    container-type: inline-size;
+    display: grid;
+    grid-template-columns: subgrid;
   }
 
   #cv_inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-column: content;
+    container-type: inline-size;
     display: flex;
     flex-direction: column;
     --flow-space: var(--space-xl);
@@ -252,12 +253,6 @@ const cards = [
 
   .cv_card_link:hover {
     text-decoration: underline;
-  }
-
-  @container (max-width: 1280px) {
-    #cv_inner {
-      padding: 0 var(--space-l);
-    }
   }
 
   @container (max-width: 900px) {
