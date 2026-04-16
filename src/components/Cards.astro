@@ -35,17 +35,18 @@
 
 <style>
   #cards {
-    width: 100%;
-    margin-top: -160px;
+    grid-column: full;
+    margin-top: -80px;
     position: relative;
     z-index: 1;
     padding-bottom: var(--space-xl);
-    container-type: inline-size;
+    display: grid;
+    grid-template-columns: subgrid;
   }
 
   #cards_inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-column: content;
+    container-type: inline-size;
   }
 
   /* Subgrid */
@@ -110,12 +111,6 @@
   @supports not (color: hsl(from red h s l)) {
     .card_link:hover {
       color: var(--color-white);
-    }
-  }
-
-  @media (max-width: 1280px) {
-    #cards_inner {
-      padding: 0 var(--space-l);
     }
   }
 
