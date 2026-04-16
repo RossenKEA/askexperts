@@ -46,6 +46,7 @@ import Button from "./Button.astro";
     flex-direction: column;
     align-items: center;
     --flow-space: var(--space-2xs);
+    container-type: inline-size;
   }
   #newsletter_inner > * + * {
     margin-top: var(--flow-space);
@@ -125,7 +126,9 @@ import Button from "./Button.astro";
       padding-left: var(--space-l);
       padding-right: var(--space-l);
     }
+  }
 
+  @container (max-width: 600px) {
     #newsletter_form {
       flex-direction: column;
       width: 100%;
