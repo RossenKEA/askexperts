@@ -88,13 +88,14 @@ const {
   }
 
   #wte {
-    width: 100%;
+    grid-column: full;
     padding: var(--space-2xl) 0 var(--space-3xl);
+    display: grid;
+    grid-template-columns: subgrid;
   }
 
   #wte_inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-column: content;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
@@ -199,17 +200,10 @@ const {
     margin-top: 3px;
   }
 
-  @media (max-width: 1280px) {
-    #wte_inner {
-      padding: 0 var(--space-l);
-    }
-  }
-
   @media (max-width: 768px) {
     #wte_inner {
       grid-template-columns: 1fr;
       gap: var(--space-xl);
-      padding: 0 var(--space-l);
     }
 
     #wte_accent {
