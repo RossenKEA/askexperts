@@ -65,9 +65,7 @@ const { member } = Astro.props;
   /* Section */
   .profile {
     padding: var(--space-3xl) 0;
-    min-height: 60vh;
-
-    margin-bottom: 150px;
+    margin-bottom: var(--space-3xl);
   }
 
   .profile__inner {
@@ -111,9 +109,9 @@ const { member } = Astro.props;
   .profile__photo {
     position: relative;
     z-index: 1;
-    width: 478px;
-    height: 504px;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 478 / 504;
     object-fit: cover;
     border-radius: 20px;
     display: block;
@@ -226,9 +224,19 @@ const { member } = Astro.props;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
+    .profile {
+      padding: var(--space-2xl) 0;
+      margin-bottom: var(--space-2xl);
+    }
+
     .profile__inner {
       grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .profile__left {
+      align-items: center;
     }
 
     .profile__right {
@@ -236,7 +244,52 @@ const { member } = Astro.props;
     }
 
     .profile__photowrap {
-      max-width: 100%;
+      width: min(478px, 100%);
+      margin-top: 0;
+    }
+
+    .profile__photo {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 478 / 504;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .profile {
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .profile__inner {
+      padding: 0 var(--space-m);
+      gap: var(--space-l);
+    }
+
+    .profile__deco {
+      top: -14px;
+      left: -14px;
+      width: 45%;
+      height: 32%;
+      border-radius: 10px;
+    }
+
+    .profile__name {
+      font-size: clamp(32px, 9vw, 45px);
+    }
+
+    .profile__exp_title {
+      font-size: clamp(24px, 7vw, 30px);
+    }
+
+    .profile__role,
+    .profile__bio,
+    .profile__exp_body {
+      font-size: 15px;
+    }
+
+    .profile__socials {
+      justify-content: center;
     }
   }
 </style>
