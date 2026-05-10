@@ -167,7 +167,7 @@ body > * {
 }
 
 #footer_links a:hover {
-  color: hsl(from var(--color-muted, #99a1af) h s calc(l + 30%));
+  color: hsl(from var(--color-muted, #99a1af) h s calc(l + 30));
 }
 
 @supports not (color: hsl(from red h s l)) {
